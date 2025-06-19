@@ -1,0 +1,82 @@
+---
+const reasons = [
+  {
+    title: "Principes marketing éprouvés",
+    description: "Basé sur des méthodes validées par des milliers d'entreprises"
+  },
+  {
+    title: "Approche terrain adaptée aux PME", 
+    description: "Spécialement conçu pour les enjeux des entreprises de 10 à 500 salariés"
+  },
+  {
+    title: "Intégration intelligente de l'IA",
+    description: "Automatisation moderne pour maximiser votre efficacité"
+  }
+];
+---
+
+<section class="py-20 lg:py-32 relative overflow-hidden">
+  <div class="absolute inset-0 bg-gradient-navy"></div>
+  
+  <!-- Decorative Elements -->
+  <div class="absolute top-20 right-10 w-72 h-72 bg-gold-500/10 rounded-full blur-3xl"></div>
+  <div class="absolute bottom-20 left-10 w-80 h-80 bg-purple-500/10 rounded-full blur-3xl"></div>
+
+  <div class="relative z-10 container mx-auto px-6 text-center">
+    <div class="max-w-5xl mx-auto">
+      <h2 class="text-4xl lg:text-5xl font-bold text-white mb-6 font-crimson">
+        Pourquoi la
+        <span class="text-gradient-gold block">Méthode AIA™ fonctionne :</span>
+      </h2>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+        {reasons.map((reason, index) => (
+          <div
+            class="glass p-8 rounded-3xl hover:glass-strong hover-lift transition-all duration-500 animate-fade-in"
+            style={`animation-delay: ${index * 0.2}s`}
+          >
+            <div class="w-16 h-16 bg-gradient-to-r from-gold-500 to-gold-600 rounded-2xl flex items-center justify-center mx-auto mb-6">
+              {index === 0 && (
+                <svg class="w-8 h-8 text-navy-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                </svg>
+              )}
+              {index === 1 && (
+                <svg class="w-8 h-8 text-navy-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                </svg>
+              )}
+              {index === 2 && (
+                <svg class="w-8 h-8 text-navy-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                </svg>
+              )}
+            </div>
+            
+            <h3 class="text-xl font-bold text-gold-400 mb-4 font-crimson">
+              ✔️ {reason.title}
+            </h3>
+            
+            <p class="text-gray-300 font-crimson leading-relaxed">
+              {reason.description}
+            </p>
+          </div>
+        ))}
+      </div>
+
+      <div class="glass-strong p-8 rounded-3xl max-w-3xl mx-auto">
+        <div class="flex items-center justify-center mb-6">
+          <svg class="w-8 h-8 text-gold-400 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path>
+          </svg>
+          <h3 class="text-2xl font-bold text-white font-crimson">
+            Notre objectif
+          </h3>
+        </div>
+        <p class="text-xl text-gray-300 font-crimson">
+          Des résultats concrets, rapides, et mesurables pour votre entreprise.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>

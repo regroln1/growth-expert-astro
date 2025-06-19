@@ -1,23 +1,87 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Hero from '../components/Hero.astro';
+import StakesSection from '../components/StakesSection.astro';
+import AIAMethod from '../components/AIAMethod.astro';
+import GuideSection from '../components/GuideSection.astro';
+import ThreeStepsSection from '../components/ThreeStepsSection.astro';
+import TwoScenariosSection from '../components/TwoScenariosSection.astro';
+import WhyItWorksSection from '../components/WhyItWorksSection.astro';
+import FreeResourcesSection from '../components/FreeResourcesSection.astro';
+import BlogPreviewSection from '../components/BlogPreviewSection.astro';
+import Contact from '../components/Contact.astro';
+import Footer from '../components/Footer.astro';
 ---
 
-<Layout title="Growth Expert - Test">
-  <main class="min-h-screen bg-gradient-navy flex items-center justify-center">
-    <div class="text-center text-white px-6">
-      <h1 class="text-6xl font-bold mb-6 font-crimson">
-        <span class="text-gradient-gold">Méthode AIA™</span>
-      </h1>
-      <p class="text-xl text-gray-300 font-inter mb-8">
-        Setup Test ✅
-      </p>
-      <div class="glass p-8 rounded-3xl max-w-md mx-auto hover-lift">
-        <p class="font-crimson text-lg">
-          🎨 Design system working<br/>
-          ⚡ Tailwind configured<br/>
-          🚀 Ready!
-        </p>
+<Layout title="Growth Expert - Libérez le Potentiel de Votre PME avec la Méthode AIA™">
+  <div class="min-h-screen">
+    <Header />
+    <main>
+      <Hero />
+      <div class="animate-on-scroll">
+        <StakesSection />
       </div>
-    </div>
-  </main>
+      <div class="animate-on-scroll">
+        <AIAMethod />
+      </div>
+      <div class="animate-on-scroll">
+        <GuideSection />
+      </div>
+      <div class="animate-on-scroll">
+        <ThreeStepsSection />
+      </div>
+      <div class="animate-on-scroll">
+        <TwoScenariosSection />
+      </div>
+      <div class="animate-on-scroll">
+        <WhyItWorksSection />
+      </div>
+      <div class="animate-on-scroll">
+        <FreeResourcesSection />
+      </div>
+      <div class="animate-on-scroll">
+        <BlogPreviewSection />
+      </div>
+      <div class="animate-on-scroll">
+        <Contact />
+      </div>
+    </main>
+    <Footer />
+  </div>
+</Layout>
+
+<script>
+  // Smooth scroll animation observer
+  const observerOptions = {
+    threshold: 0.1,
+    rootMargin: '0px 0px -50px 0px'
+  };
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('in-view');
+      }
+    });
+  }, observerOptions);
+
+  // Observe all animate-on-scroll elements
+  const animateElements = document.querySelectorAll('.animate-on-scroll');
+  animateElements.forEach((el) => observer.observe(el));
+</script>
+
+<style>
+  /* Animations for page load */
+  .animate-on-scroll {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.6s ease-out;
+  }
+
+  .animate-on-scroll.in-view {
+    opacity: 1;
+    transform: translateY(0);
+  }
+</style>
 </Layout>

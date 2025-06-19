@@ -1,0 +1,89 @@
+---
+const resources = [
+  {
+    title: "Checklist",
+    subtitle: "Alignez votre offre en 7 jours",
+    description: "Guide étape par étape pour clarifier votre proposition de valeur"
+  },
+  {
+    title: "Template",
+    subtitle: "Votre plan de croissance sur 90 jours", 
+    description: "Modèle complet pour structurer votre développement"
+  },
+  {
+    title: "Audit Express",
+    subtitle: "Diagnostiquez votre moteur d'acquisition",
+    description: "Évaluation rapide de vos performances actuelles"
+  }
+];
+---
+
+<section class="py-20 lg:py-32 relative overflow-hidden">
+  <div class="absolute inset-0 bg-gradient-to-b from-white to-gray-50"></div>
+
+  <div class="relative z-10 container mx-auto px-6">
+    <div class="max-w-6xl mx-auto text-center">
+      <h2 class="text-4xl lg:text-5xl font-bold text-navy-900 mb-6 font-crimson">
+        Nos ressources gratuites pour
+        <span class="text-gradient block">dirigeants ambitieux</span>
+      </h2>
+
+      <p class="text-xl text-gray-600 mb-16 font-crimson max-w-3xl mx-auto">
+        Commencez dès maintenant à transformer votre entreprise avec nos outils pratiques et éprouvés.
+      </p>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+        {resources.map((resource, index) => (
+          <div
+            class="glass p-8 rounded-3xl hover:glass-strong hover-lift transition-all duration-500 animate-fade-in"
+            style={`animation-delay: ${index * 0.2}s`}
+          >
+            <div class="w-20 h-20 bg-gradient-bkc rounded-2xl flex items-center justify-center mx-auto mb-6">
+              {index === 0 && (
+                <svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+                </svg>
+              )}
+              {index === 1 && (
+                <svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+                </svg>
+              )}
+              {index === 2 && (
+                <svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path>
+                </svg>
+              )}
+            </div>
+            
+            <h3 class="text-2xl font-bold text-navy-900 mb-2">
+              {resource.title}
+            </h3>
+            
+            <h4 class="text-lg font-semibold text-gradient mb-4 font-crimson">
+              {resource.subtitle}
+            </h4>
+            
+            <p class="text-gray-600 font-crimson mb-6 leading-relaxed">
+              {resource.description}
+            </p>
+
+            <button class="w-full py-3 px-6 glass border border-navy-200 text-navy-700 font-semibold rounded-full hover:glass-strong transition-all duration-300">
+              Télécharger
+            </button>
+          </div>
+        ))}
+      </div>
+
+      <a
+        href="/ressources"
+        class="inline-flex items-center px-8 py-4 bg-gradient-bkc text-white font-semibold rounded-full hover:shadow-2xl hover-lift transition-all duration-300"
+      >
+        Télécharger gratuitement
+        <svg class="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+        </svg>
+      </a>
+    </div>
+  </div>
+</section>

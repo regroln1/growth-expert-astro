@@ -1,0 +1,95 @@
+---
+const steps = [
+  {
+    number: "1",
+    title: "Réservez votre session stratégique AIA™",
+    description: "Un diagnostic complet de votre situation actuelle"
+  },
+  {
+    number: "2", 
+    title: "Recevez votre feuille de route personnalisée",
+    description: "Plan d'action détaillé et adapté à vos enjeux"
+  },
+  {
+    number: "3",
+    title: "Implémentez avec notre accompagnement",
+    description: "Suivi et support pour garantir vos résultats"
+  }
+];
+---
+
+<section class="py-20 lg:py-32 relative overflow-hidden">
+  <div class="absolute inset-0 bg-gradient-navy"></div>
+  
+  <!-- Decorative Elements -->
+  <div class="absolute top-20 left-10 w-64 h-64 bg-purple-500/10 rounded-full blur-3xl"></div>
+  <div class="absolute bottom-20 right-10 w-80 h-80 bg-blue-500/10 rounded-full blur-3xl"></div>
+
+  <div class="relative z-10 container mx-auto px-6 text-center">
+    <div class="max-w-5xl mx-auto">
+      <h2 class="text-4xl lg:text-5xl font-bold text-white mb-16 font-crimson">
+        Voici comment nous vous aidons à
+        <span class="text-gradient-gold block">réussir :</span>
+      </h2>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+        {steps.map((step, index) => (
+          <div
+            class="relative glass p-8 rounded-3xl hover:glass-strong hover-lift transition-all duration-500 animate-fade-in"
+            style={`animation-delay: ${index * 0.2}s`}
+          >
+            <!-- Step Number -->
+            <div class="absolute -top-4 left-8 w-12 h-12 bg-gradient-to-r from-gold-500 to-gold-600 rounded-full flex items-center justify-center">
+              <span class="text-navy-900 font-bold text-xl">{step.number}</span>
+            </div>
+
+            <!-- Icon -->
+            <div class="w-16 h-16 bg-white/10 rounded-2xl flex items-center justify-center mx-auto mb-6 mt-4">
+              {step.number === "1" && (
+                <svg class="w-8 h-8 text-gold-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+                </svg>
+              )}
+              {step.number === "2" && (
+                <svg class="w-8 h-8 text-gold-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+                </svg>
+              )}
+              {step.number === "3" && (
+                <svg class="w-8 h-8 text-gold-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                </svg>
+              )}
+            </div>
+            
+            <h3 class="text-xl font-bold text-white mb-4 font-crimson">
+              {step.title}
+            </h3>
+            
+            <p class="text-gray-300 font-crimson leading-relaxed">
+              {step.description}
+            </p>
+
+            <!-- Connector Arrow (except for last step) -->
+            {index < steps.length - 1 && (
+              <div class="hidden md:block absolute top-1/2 -right-4 transform -translate-y-1/2">
+                <div class="w-8 h-0.5 bg-gold-400"></div>
+                <div class="w-0 h-0 border-l-4 border-l-gold-400 border-t-2 border-t-transparent border-b-2 border-b-transparent ml-6 -mt-1"></div>
+              </div>
+            )}
+          </div>
+        ))}
+      </div>
+
+      <a
+        href="#contact"
+        class="inline-flex items-center px-8 py-4 bg-gradient-to-r from-gold-500 to-gold-600 text-navy-900 font-semibold rounded-full hover:shadow-2xl hover-lift transition-all duration-300"
+      >
+        Réserver ma session stratégique
+        <svg class="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+        </svg>
+      </a>
+    </div>
+  </div>
+</section>
