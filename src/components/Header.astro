@@ -1,20 +1,36 @@
 ---
-const navItems = [
-  { name: 'Accueil', href: '#home' },
-  { name: 'Services', href: '#services' },
-  { name: 'À Propos', href: '#about' },
-  { name: 'Contact', href: '#contact' },
-];
+// Détection de la page actuelle
+const currentPath = Astro.url.pathname;
+const isHomePage = currentPath === '/' || currentPath === '/index.html';
+
+// Navigation adaptative selon la page
+const navItems = isHomePage 
+  ? [
+      { name: 'Accueil', href: '#home', isActive: true },
+      { name: 'Méthode AIA™', href: '#aia-method', hasPage: true, pagePath: '/methode-aia' },
+      { name: 'À Propos', href: '#about', hasPage: true, pagePath: '/a-propos' },
+      { name: 'Ressources', href: '#resources', hasPage: true, pagePath: '/ressources' },
+      { name: 'Blog', href: '#blog', hasPage: true, pagePath: '/blog' },
+      { name: 'Travailler avec moi', href: '#contact', hasPage: true, pagePath: '/travailler-avec-moi' }
+    ]
+  : [
+      { name: 'Accueil', href: '/' },
+      { name: 'Méthode AIA™', href: '/methode-aia', isActive: currentPath === '/methode-aia' },
+      { name: 'À Propos', href: '/a-propos', isActive: currentPath === '/a-propos' },
+      { name: 'Ressources', href: '/ressources', isActive: currentPath === '/ressources' },
+      { name: 'Blog', href: '/blog', isActive: currentPath === '/blog' },
+      { name: 'Travailler avec moi', href: '/travailler-avec-moi', isActive: currentPath === '/travailler-avec-moi' }
+    ];
 ---
 
 <header id="header" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-transparent">
   <div class="container mx-auto px-6">
     <div class="flex items-center justify-between h-16 lg:h-20">
-      <!-- Logo -->
+      <!-- Logo - toujours vers l'accueil -->
       <div class="flex items-center">
-        <h1 class="text-2xl font-bold text-gradient">
+        <a href="/" class="text-2xl font-bold text-gradient hover:opacity-80 transition-opacity">
           Régis ROLNIN
-        </h1>
+        </a>
       </div>
 
       <!-- Desktop Navigation -->
@@ -22,23 +38,43 @@ const navItems = [
         {navItems.map((item) => (
           <a
             href={item.href}
-            class="text-navy-700 hover:text-navy-900 font-medium transition-colors duration-200 relative group"
+            class={`font-medium transition-colors duration-200 relative group ${
+              item.isActive 
+                ? 'text-navy-900 font-semibold' 
+                : 'text-navy-700 hover:text-navy-900'
+            }`}
+            data-nav-type={isHomePage ? 'scroll' : 'page'}
           >
             {item.name}
-            <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-bkc transition-all duration-300 group-hover:w-full"></span>
+            <span class={`absolute bottom-0 left-0 h-0.5 bg-gradient-bkc transition-all duration-300 ${
+              item.isActive ? 'w-full' : 'w-0 group-hover:w-full'
+            }`}></span>
           </a>
         ))}
       </nav>
 
       <!-- CTA Button -->
-      <div class="hidden lg:flex items-center">
+      <div class="hidden lg:flex items-center space-x-4">
+        <!-- Consultation Gratuite (uniquement si pas sur page contact) -->
+        {!isHomePage && currentPath !== '/travailler-avec-moi' && (
+          <a
+            href="/travailler-avec-moi"
+            class="text-navy-700 hover:text-navy-900 font-medium transition-colors duration-200"
+          >
+            Consultation Gratuite
+          </a>
+        )}
+        
+        <!-- Espace Client - Lien externe -->
         <a
-          href="#contact"
+          href="https://acces.regisrolnin.com/"
+          target="_blank"
+          rel="noopener noreferrer"
           class="inline-flex items-center px-6 py-3 bg-gradient-bkc text-white font-medium rounded-full hover:shadow-lg hover-lift transition-all duration-300"
         >
-          Consultation Gratuite
+          Espace Client
           <svg class="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
           </svg>
         </a>
       </div>
@@ -47,31 +83,43 @@ const navItems = [
       <button
         id="mobile-menu-btn"
         class="lg:hidden p-2 text-navy-700 hover:text-navy-900 transition-colors"
+        aria-label="Menu mobile"
       >
-        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <svg id="menu-icon" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+        <svg id="close-icon" class="w-6 h-6 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
         </svg>
       </button>
     </div>
 
     <!-- Mobile Menu -->
-    <div id="mobile-menu" class="lg:hidden absolute top-full left-0 right-0 glass-strong shadow-xl hidden">
+    <div id="mobile-menu" class="lg:hidden absolute top-full left-0 right-0 glass-strong shadow-xl transform translate-y-[-10px] opacity-0 invisible transition-all duration-300">
       <nav class="flex flex-col p-6 space-y-4">
         {navItems.map((item) => (
           <a
             href={item.href}
-            class="text-navy-700 hover:text-navy-900 font-medium py-2 transition-colors mobile-menu-link"
+            class={`font-medium py-2 transition-colors mobile-menu-link ${
+              item.isActive 
+                ? 'text-navy-900 font-semibold' 
+                : 'text-navy-700 hover:text-navy-900'
+            }`}
+            data-nav-type={isHomePage ? 'scroll' : 'page'}
           >
             {item.name}
           </a>
         ))}
+        <!-- Espace Client - Mobile -->
         <a
-          href="#contact"
+          href="https://votre-suitedash-url.com/client-login"
+          target="_blank"
+          rel="noopener noreferrer"
           class="inline-flex items-center justify-center px-6 py-3 bg-gradient-bkc text-white font-medium rounded-full hover:shadow-lg transition-all duration-300 mt-4 mobile-menu-link"
         >
-          Consultation Gratuite
+          Espace Client
           <svg class="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
           </svg>
         </a>
       </nav>
@@ -80,35 +128,140 @@ const navItems = [
 </header>
 
 <script>
+  // État du menu mobile
+  let isMobileMenuOpen = false;
+
+  // Éléments DOM
+  const header = document.getElementById('header');
+  const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+  const mobileMenu = document.getElementById('mobile-menu');
+  const menuIcon = document.getElementById('menu-icon');
+  const closeIcon = document.getElementById('close-icon');
+
   // Header scroll effect
-  window.addEventListener('scroll', () => {
-    const header = document.getElementById('header');
-    if (header) {
-      if (window.scrollY > 20) {
-        header.classList.add('glass-nav', 'shadow-lg');
-        header.classList.remove('bg-transparent');
-      } else {
-        header.classList.remove('glass-nav', 'shadow-lg');
-        header.classList.add('bg-transparent');
+  function handleScroll() {
+    if (!header) return;
+    
+    if (window.scrollY > 20) {
+      header.classList.add('glass-nav', 'shadow-lg');
+      header.classList.remove('bg-transparent');
+    } else {
+      header.classList.remove('glass-nav', 'shadow-lg');
+      header.classList.add('bg-transparent');
+    }
+  }
+
+  // Mobile menu toggle
+  function toggleMobileMenu() {
+    isMobileMenuOpen = !isMobileMenuOpen;
+    
+    if (isMobileMenuOpen) {
+      // Ouvrir le menu
+      mobileMenu?.classList.remove('translate-y-[-10px]', 'opacity-0', 'invisible');
+      mobileMenu?.classList.add('translate-y-0', 'opacity-100', 'visible');
+      menuIcon?.classList.add('hidden');
+      closeIcon?.classList.remove('hidden');
+      document.body.style.overflow = 'hidden'; // Empêcher le scroll
+    } else {
+      // Fermer le menu
+      mobileMenu?.classList.add('translate-y-[-10px]', 'opacity-0', 'invisible');
+      mobileMenu?.classList.remove('translate-y-0', 'opacity-100', 'visible');
+      menuIcon?.classList.remove('hidden');
+      closeIcon?.classList.add('hidden');
+      document.body.style.overflow = ''; // Restaurer le scroll
+    }
+  }
+
+  // Smooth scroll pour les ancres (seulement sur la page d'accueil)
+  function handleNavClick(event) {
+    const link = event.target.closest('a');
+    if (!link) return;
+
+    const navType = link.getAttribute('data-nav-type');
+    const href = link.getAttribute('href');
+
+    // Si c'est un scroll sur la page d'accueil
+    if (navType === 'scroll' && href?.startsWith('#')) {
+      event.preventDefault();
+      
+      const targetId = href.substring(1);
+      const targetElement = document.getElementById(targetId);
+      
+      if (targetElement) {
+        // Fermer le menu mobile si ouvert
+        if (isMobileMenuOpen) {
+          toggleMobileMenu();
+        }
+        
+        // Smooth scroll
+        targetElement.scrollIntoView({
+          behavior: 'smooth',
+          block: 'start'
+        });
+        
+        // Mettre à jour l'URL sans recharger
+        history.pushState(null, '', href);
       }
+    }
+    // Sinon, navigation normale vers d'autres pages
+  }
+
+  // Event listeners
+  window.addEventListener('scroll', handleScroll);
+  mobileMenuBtn?.addEventListener('click', toggleMobileMenu);
+
+  // Gestion des clics sur les liens de navigation
+  document.addEventListener('click', handleNavClick);
+
+  // Fermer le menu mobile au clic en dehors
+  document.addEventListener('click', (event) => {
+    if (isMobileMenuOpen && 
+        !mobileMenu?.contains(event.target) && 
+        !mobileMenuBtn?.contains(event.target)) {
+      toggleMobileMenu();
     }
   });
 
-  // Mobile menu toggle
-  const mobileMenuBtn = document.getElementById('mobile-menu-btn');
-  const mobileMenu = document.getElementById('mobile-menu');
-  
-  if (mobileMenuBtn && mobileMenu) {
-    mobileMenuBtn.addEventListener('click', () => {
-      mobileMenu.classList.toggle('hidden');
-    });
+  // Fermer le menu mobile avec Escape
+  document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape' && isMobileMenuOpen) {
+      toggleMobileMenu();
+    }
+  });
 
-    // Close mobile menu when clicking on links
-    const mobileMenuLinks = document.querySelectorAll('.mobile-menu-link');
-    mobileMenuLinks.forEach(link => {
-      link.addEventListener('click', () => {
-        mobileMenu.classList.add('hidden');
-      });
-    });
-  }
+  // Gérer le redimensionnement de la fenêtre
+  window.addEventListener('resize', () => {
+    if (window.innerWidth >= 1024 && isMobileMenuOpen) {
+      toggleMobileMenu(); // Fermer le menu mobile sur desktop
+    }
+  });
 </script>
+
+<style>
+  /* Amélioration de l'animation du menu mobile */
+  #mobile-menu {
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+  }
+  
+  /* Style pour les liens actifs */
+  .mobile-menu-link {
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .mobile-menu-link::before {
+    content: '';
+    position: absolute;
+    left: -100%;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
+    transition: left 0.5s;
+  }
+  
+  .mobile-menu-link:hover::before {
+    left: 100%;
+  }
+</style>

@@ -1,0 +1,31 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<Layout 
+  title="À Propos - Regis ROLNIN | Growth Expert"
+  description="Découvrez le parcours de Regis ROLNIN, expert en croissance d'entreprise"
+>
+  <Header />
+  <main class="pt-20">
+    <section class="py-20 lg:py-32">
+      <div class="container mx-auto px-6 text-center">
+        <h1 class="text-4xl lg:text-5xl font-bold text-navy-900 mb-8 font-crimson">
+          À Propos de Regis ROLNIN
+        </h1>
+        <div class="glass p-8 rounded-3xl max-w-2xl mx-auto">
+          <p class="text-lg text-gray-700 mb-4">
+            Expert en croissance d'entreprise depuis plus de 10 ans.
+          </p>
+          <p class="text-lg text-gray-700">
+            Créateur de la Méthode AIA™ et accompagnateur de 300+ entreprises.
+          </p>
+        </div>
+      </div>
+    </section>
+  </main>
+  <Footer />
+</Layout>
+EOF
