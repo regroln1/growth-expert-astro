@@ -168,3 +168,7 @@ html {
     transform: translateY(-3px);
   }
 }
+
+html {
+  font-family: theme('fontFamily.sans'); /* Jost */
+}
