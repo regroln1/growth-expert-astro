@@ -2,7 +2,16 @@
 ---
 
 <section class="py-20 lg:py-32 relative overflow-hidden">
-  <div class="absolute inset-0 bg-gradient-to-b from-gray-50 to-white"></div>
+  <!-- OPTION 1: Circulaire -->
+  <div class="absolute inset-0" style="background: radial-gradient(ellipse at center, #ffffff 25%, #f1f5f9 65%, #94a3b8 100%);"></div>
+  
+  <!-- OPTION 2: Diagonal - Décommentez pour tester
+  <div class="absolute inset-0" style="background: linear-gradient(45deg, #94a3b8 0%, #ffffff 35%, #ffffff 65%, #e2e8f0 100%);"></div>
+  -->
+  
+  <!-- OPTION 3: Top to Bottom - Décommentez pour tester  
+  <div class="absolute inset-0" style="background: linear-gradient(to bottom, #94a3b8 0%, #ffffff 25%, #ffffff 75%, #cbd5e1 100%);"></div>
+  -->
 
   <div class="relative z-10 container mx-auto px-6">
     <div class="max-w-6xl mx-auto">

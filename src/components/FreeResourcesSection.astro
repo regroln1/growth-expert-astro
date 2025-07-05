@@ -20,7 +20,16 @@ const resources = [
 
 <!-- ✅ MODIFICATION : Ajout de id="resources" pour permettre la navigation par ancre depuis le menu -->
 <section id="resources" class="py-20 lg:py-32 relative overflow-hidden">
-  <div class="absolute inset-0 bg-gradient-to-b from-white to-gray-50"></div>
+  <!-- OPTION 1: Circulaire 
+  <div class="absolute inset-0" style="background: radial-gradient(ellipse at center, #ffffff 30%, #e0e7ff 70%, #c7d2fe 100%);"></div>
+  -->
+  <!-- OPTION 2: Diagonal - Décommentez pour tester-->
+  <div class="absolute inset-0" style="background: linear-gradient(225deg, #c7d2fe 0%, #ffffff 40%, #ffffff 60%, #e0e7ff 100%);"></div>
+  
+  
+  <!-- OPTION 3: Top to Bottom - Décommentez pour tester  
+  <div class="absolute inset-0" style="background: linear-gradient(to bottom, #c7d2fe 0%, #ffffff 30%, #ffffff 70%, #e0e7ff 100%);"></div>
+  -->
 
   <div class="relative z-10 container mx-auto px-6">
     <div class="max-w-6xl mx-auto text-center">
