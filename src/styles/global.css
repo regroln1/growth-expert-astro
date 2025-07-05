@@ -34,6 +34,16 @@
   --navy-black: #080f1f;
   --navy-medium: #0c2748;
   --violet-bordeaux: #330523;
+  
+  /* Nouveaux gradients */
+  --gradient-1: linear-gradient(to top, #080f1f 0%, #c39a6b 100%);
+  --gradient-2: linear-gradient(180deg, #080f1f 0%, #0c2748 100%);
+  --gradient-3: linear-gradient(to top, #051334 0%, #330523 100%);
+  --gradient-4: linear-gradient(to top, #051334 0%, #330523 100%);
+  --gradient-5: linear-gradient(to top, #051334 0%, #0a6460 160%);
+  --gradient-6: linear-gradient(to top, #080f1f 0%, #330523 100%);
+  --gradient-7: linear-gradient(to top, #050d21 0%, #111e3e 100%);
+  --gradient-special: linear-gradient(to top, #080f1f 0%, #330523 100%);
 }
 
 * {
@@ -102,6 +112,39 @@ html {
 
 .bg-violet-bordeaux {
   background-color: var(--violet-bordeaux);
+}
+
+/* Classes de gradients */
+.bg-gradient-1 {
+  background: var(--gradient-1);
+}
+
+.bg-gradient-2 {
+  background: var(--gradient-2);
+}
+
+.bg-gradient-3 {
+  background: var(--gradient-3);
+}
+
+.bg-gradient-4 {
+  background: var(--gradient-4);
+}
+
+.bg-gradient-5 {
+  background: var(--gradient-5);
+}
+
+.bg-gradient-6 {
+  background: var(--gradient-6);
+}
+
+.bg-gradient-7 {
+  background: var(--gradient-7);
+}
+
+.bg-gradient-special {
+  background: var(--gradient-special);
 }
 
 /* Ancien gradient navy remplacé par les nouvelles couleurs */
