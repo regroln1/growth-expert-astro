@@ -1,36 +1,39 @@
 ---
 ---
 
-<section id="home" class="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
-  <!-- Background Navy Dark -->
-  <div class="absolute inset-0 bg-navy-dark"></div>
-  
-  <!-- Animated Background Elements -->
+<section id="home" class="relative min-h-screen flex items-center justify-center overflow-hidden pt-20 bg-galaxy bg-particles">
+  <!-- Enhanced Background Elements with BKC inspiration -->
   <div class="absolute inset-0">
-    <div class="absolute top-20 left-10 w-72 h-72 bg-blue-500/10 rounded-full blur-3xl animate-float"></div>
-    <div class="absolute bottom-20 right-10 w-96 h-96 bg-purple-500/10 rounded-full blur-3xl animate-float" style="animation-delay: 2s;"></div>
+    <!-- Main galaxy background is handled by bg-galaxy class -->
+    
+    <!-- Floating orbs with enhanced effects -->
+    <div class="absolute top-20 left-10 w-72 h-72 bg-blue-500/10 rounded-full blur-3xl float-slow"></div>
+    <div class="absolute bottom-20 right-10 w-96 h-96 bg-purple-500/10 rounded-full blur-3xl float-medium" style="animation-delay: 2s;"></div>
+    <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-gold-500/5 rounded-full blur-3xl float-fast" style="animation-delay: 4s;"></div>
+    
+    <!-- Additional depth layers -->
+    <div class="absolute top-40 right-1/4 w-48 h-48 bg-indigo-500/8 rounded-full blur-2xl float-slow" style="animation-delay: 1s;"></div>
+    <div class="absolute bottom-40 left-1/4 w-56 h-56 bg-violet-500/8 rounded-full blur-2xl float-medium" style="animation-delay: 3s;"></div>
   </div>
 
+  <!-- Enhanced content with better spacing and effects -->
   <div class="relative z-10 container mx-auto px-6">
     <div class="flex items-center justify-center">
-      <!-- Content centré, sans grid -->
-      <div class="text-white text-center max-w-4xl">
-        <h1 class="text-4xl lg:text-6xl font-bold mb-6 animate-fade-in">
-          <span class="font-crimson">Libérez le Potentiel</span>
-          <br />
-          <span class="font-crimson">de Votre PME avec la</span>
-          <br />
-          <span class="text-gradient-gold">Méthode AIA™</span>
+      <div class="text-white text-center max-w-5xl">
+        <h1 class="text-4xl lg:text-7xl font-bold mb-8 animate-fade-in">
+          <span class="font-crimson block mb-2">Libérez le Potentiel</span>
+          <span class="font-crimson block mb-2">de Votre PME avec la</span>
+          <span class="text-gradient-gold block">Méthode AIA™</span>
         </h1>
 
-        <p class="text-xl lg:text-2xl text-gray-300 mb-8 leading-relaxed animate-fade-in font-crimson" style="animation-delay: 0.2s;">
+        <p class="text-xl lg:text-2xl text-gray-300 mb-12 leading-relaxed animate-fade-in font-crimson max-w-4xl mx-auto" style="animation-delay: 0.2s;">
           Alignez votre offre, attirez des clients qualifiés et automatisez votre croissance — en moins de 90 jours.
         </p>
 
         <div class="animate-fade-in" style="animation-delay: 0.4s;">
           <a
             href="#contact"
-            class="inline-flex items-center px-8 py-4 bg-gradient-to-r from-gold-500 to-gold-600 text-navy-900 font-semibold rounded-full hover:shadow-2xl hover-lift transition-all duration-300"
+            class="inline-flex items-center px-8 py-4 glass border border-white/20 text-white font-semibold rounded-full hover:glass-strong hover-lift transition-all duration-300"
           >
             Réservez votre Session Stratégique
             <svg class="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -38,7 +41,22 @@
             </svg>
           </a>
         </div>
+
+        <!-- Enhanced trust indicators -->
+        <div class="mt-16 animate-fade-in" style="animation-delay: 0.6s;">
+          <div class="glass p-6 rounded-2xl inline-block">
+            <p class="text-gold-400 font-semibold text-lg mb-2">
+              ✨ +300 entreprises accompagnées
+            </p>
+            <p class="text-gray-300 text-sm">
+              Résultats mesurables en moins de 90 jours
+            </p>
+          </div>
+        </div>
       </div>
     </div>
   </div>
+
+  <!-- Enhanced section transition -->
+  <div class="absolute bottom-0 left-0 right-0 h-20 bg-gradient-to-t from-white/10 to-transparent"></div>
 </section>
