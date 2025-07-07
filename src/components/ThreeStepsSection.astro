@@ -3,93 +3,115 @@ const steps = [
   {
     number: "1",
     title: "Réservez votre session stratégique AIA™",
-    description: "Un diagnostic complet de votre situation actuelle"
+    description: "Un diagnostic complet de votre situation actuelle et identification des leviers prioritaires"
   },
   {
     number: "2", 
     title: "Recevez votre feuille de route personnalisée",
-    description: "Plan d'action détaillé et adapté à vos enjeux"
+    description: "Plan d'action détaillé et adapté à vos enjeux spécifiques avec timeline précise"
   },
   {
     number: "3",
     title: "Implémentez avec notre accompagnement",
-    description: "Suivi et support pour garantir vos résultats"
+    description: "Suivi personnalisé et support continu pour garantir l'atteinte de vos objectifs"
   }
 ];
 ---
 
-<section class="py-20 lg:py-32 relative overflow-hidden">
-  <div class="absolute inset-0 bg-gradient-2"></div>
+<section class="py-20 lg:py-32 relative overflow-hidden bg-particles section-divider">
+  <!-- COULEURS IDENTIQUES à la version simple + transition cuivre -->
+  <div class="absolute inset-0" style="background: linear-gradient(to bottom, #080f1f 0%, #0c2748 96%, #f4d1ae 100%);"></div>
   
-  <!-- Decorative Elements -->
-  <div class="absolute top-20 left-10 w-64 h-64 bg-purple-500/10 rounded-full blur-3xl"></div>
-  <div class="absolute bottom-20 right-10 w-80 h-80 bg-blue-500/10 rounded-full blur-3xl"></div>
+  <!-- Enhanced decorative elements -->
+  <div class="absolute top-20 left-10 w-64 h-64 bg-purple-500/10 rounded-full blur-3xl float-slow"></div>
+  <div class="absolute bottom-20 right-10 w-80 h-80 bg-blue-500/10 rounded-full blur-3xl float-medium"></div>
+  <div class="absolute top-1/2 left-1/4 w-48 h-48 bg-pink-500/8 rounded-full blur-2xl float-fast"></div>
 
   <div class="relative z-10 container mx-auto px-6 text-center">
-    <div class="max-w-5xl mx-auto">
-      <h2 class="text-4xl lg:text-5xl font-bold text-white mb-16 font-crimson">
+    <div class="max-w-6xl mx-auto">
+      <!-- Enhanced section header -->
+      <div class="inline-flex items-center px-6 py-3 glass rounded-full mb-8 animate-fade-in">
+        <svg class="w-5 h-5 mr-3 text-gold-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path>
+        </svg>
+        <span class="text-sm font-medium text-gold-400">Processus Éprouvé</span>
+      </div>
+
+      <h2 class="text-4xl lg:text-6xl font-bold text-white mb-8 font-crimson animate-fade-in" style="animation-delay: 0.1s;">
         Voici comment nous vous aidons à
         <span class="text-gradient-gold block">réussir :</span>
       </h2>
 
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+      <p class="text-xl text-gray-300 mb-16 font-crimson max-w-4xl mx-auto animate-fade-in" style="animation-delay: 0.2s;">
+        Un processus structuré en 3 étapes pour transformer votre vision en résultats concrets
+      </p>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
         {steps.map((step, index) => (
           <div
-            class="relative glass p-8 rounded-3xl hover:glass-strong hover-lift transition-all duration-500 animate-fade-in"
-            style={`animation-delay: ${index * 0.2}s`}
+            class={`relative glass-strong p-10 rounded-3xl hover:hover-lift transition-all duration-500 ${
+              index === 0 ? 'animate-slide-left' : 
+              index === 1 ? 'animate-fade-in' : 'animate-slide-right'
+            }`}
+            style={`animation-delay: ${0.3 + index * 0.2}s`}
           >
-            <!-- Step Number -->
-            <div class="absolute -top-4 left-8 w-12 h-12 bg-gradient-to-r from-gold-500 to-gold-600 rounded-full flex items-center justify-center">
-              <span class="text-navy-900 font-bold text-xl">{step.number}</span>
+            <!-- Enhanced step number -->
+            <div class="absolute -top-6 left-10 w-16 h-16 bg-gradient-to-r from-gold-500 to-gold-600 rounded-full flex items-center justify-center shadow-lg">
+              <span class="text-navy-900 font-bold text-2xl">{step.number}</span>
             </div>
 
-            <!-- Icon -->
-            <div class="w-16 h-16 bg-white/10 rounded-2xl flex items-center justify-center mx-auto mb-6 mt-4">
+            <!-- Enhanced icon -->
+            <div class="w-20 h-20 bg-white/10 rounded-3xl flex items-center justify-center mx-auto mb-8 mt-6">
               {step.number === "1" && (
-                <svg class="w-8 h-8 text-gold-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg class="w-10 h-10 text-gold-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
                 </svg>
               )}
               {step.number === "2" && (
-                <svg class="w-8 h-8 text-gold-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+                <svg class="w-10 h-10 text-gold-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 712-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
                 </svg>
               )}
               {step.number === "3" && (
-                <svg class="w-8 h-8 text-gold-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg class="w-10 h-10 text-gold-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
                 </svg>
               )}
             </div>
             
-            <h3 class="text-xl font-bold text-white mb-4 font-crimson">
+            <h3 class="text-2xl font-bold text-white mb-6 font-crimson leading-tight">
               {step.title}
             </h3>
             
-            <p class="text-gray-300 font-crimson leading-relaxed">
+            <p class="text-gray-300 font-crimson leading-relaxed text-lg">
               {step.description}
             </p>
 
-            <!-- Connector Arrow (except for last step) -->
+            <!-- Enhanced connector arrow -->
             {index < steps.length - 1 && (
-              <div class="hidden md:block absolute top-1/2 -right-4 transform -translate-y-1/2">
-                <div class="w-8 h-0.5 bg-gold-400"></div>
-                <div class="w-0 h-0 border-l-4 border-l-gold-400 border-t-2 border-t-transparent border-b-2 border-b-transparent ml-6 -mt-1"></div>
+              <div class="hidden md:block absolute top-1/2 -right-6 transform -translate-y-1/2 z-10">
+                <div class="flex items-center">
+                  <div class="w-8 h-1 bg-gradient-to-r from-gold-400 to-gold-500"></div>
+                  <div class="w-0 h-0 border-l-8 border-l-gold-400 border-t-4 border-t-transparent border-b-4 border-b-transparent"></div>
+                </div>
               </div>
             )}
           </div>
         ))}
       </div>
 
-      <a
-        href="#contact"
-        class="inline-flex items-center px-8 py-4 bg-gradient-to-r from-gold-500 to-gold-600 text-navy-900 font-semibold rounded-full hover:shadow-2xl hover-lift transition-all duration-300"
-      >
-        Réserver ma session stratégique
-        <svg class="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
-        </svg>
-      </a>
+      <!-- CTA CORRIGÉ - Sans glow effect -->
+      <div class="animate-fade-in" style="animation-delay: 0.9s;">
+        <a
+          href="#contact"
+          class="inline-flex items-center px-12 py-6 cta-secondary-dark text-white font-semibold rounded-full hover-lift transition-all duration-300 text-xl"
+        >
+          Réserver ma session stratégique gratuite
+          <svg class="ml-4 w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+          </svg>
+        </a>
+      </div>
     </div>
   </div>
 </section>

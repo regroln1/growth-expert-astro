@@ -2,7 +2,7 @@
 const reasons = [
   {
     title: "Principes marketing éprouvés",
-    description: "Basé sur des méthodes validées par des milliers d'entreprises"
+    description: "Basé sur des méthodes validées par des milliers d'entreprises à travers le monde"
   },
   {
     title: "Approche terrain adaptée aux PME", 
@@ -10,72 +10,126 @@ const reasons = [
   },
   {
     title: "Intégration intelligente de l'IA",
-    description: "Automatisation moderne pour maximiser votre efficacité"
+    description: "Automatisation moderne pour maximiser votre efficacité sans perdre l'humain"
   }
 ];
 ---
 
-<section class="py-20 lg:py-32 relative overflow-hidden">
-  <div class="absolute inset-0" style="background: linear-gradient(to top, #050d21 0%, #111e3e 100%);"></div>
+<section class="py-20 lg:py-32 relative overflow-hidden bg-deep-space bg-particles-dense section-divider">
+  <!-- Background with light copper gradients on top and bottom -->
+  <div class="absolute inset-0" style="background: linear-gradient(to bottom, #f4d1ae 0%, #080f1f 4%, #1a1a2e 25%, #1a1a2e 75%, #080f1f 96%, #f4d1ae 100%);"></div>
   
-  <!-- Decorative Elements -->
-  <div class="absolute top-20 right-10 w-72 h-72 bg-gold-500/10 rounded-full blur-3xl"></div>
-  <div class="absolute bottom-20 left-10 w-80 h-80 bg-purple-500/10 rounded-full blur-3xl"></div>
+  <!-- Enhanced decorative elements -->
+  <div class="absolute top-20 right-10 w-72 h-72 bg-gold-500/10 rounded-full blur-3xl float-slow"></div>
+  <div class="absolute bottom-20 left-10 w-80 h-80 bg-purple-500/10 rounded-full blur-3xl float-medium"></div>
+  <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-blue-500/8 rounded-full blur-2xl float-fast"></div>
 
   <div class="relative z-10 container mx-auto px-6 text-center">
-    <div class="max-w-5xl mx-auto">
-      <h2 class="text-4xl lg:text-5xl font-bold text-white mb-6 font-crimson">
+    <div class="max-w-6xl mx-auto">
+      <!-- Enhanced section header -->
+      <div class="inline-flex items-center px-6 py-3 glass rounded-full mb-8 animate-fade-in">
+        <svg class="w-5 h-5 mr-3 text-gold-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+        </svg>
+        <span class="text-sm font-medium text-gold-400">Efficacité Prouvée</span>
+      </div>
+
+      <h2 class="text-4xl lg:text-6xl font-bold text-white mb-8 font-crimson animate-fade-in" style="animation-delay: 0.1s;">
         Pourquoi la
         <span class="text-gradient-gold block">Méthode AIA™ fonctionne :</span>
       </h2>
 
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+      <p class="text-xl text-gray-300 mb-16 font-crimson max-w-4xl mx-auto animate-fade-in" style="animation-delay: 0.2s;">
+        Une approche scientifique basée sur l'expérience et les résultats de centaines d'entreprises
+      </p>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
         {reasons.map((reason, index) => (
           <div
-            class="glass p-8 rounded-3xl hover:glass-strong hover-lift transition-all duration-500 animate-fade-in"
-            style={`animation-delay: ${index * 0.2}s`}
+            class={`glass-strong p-10 rounded-3xl hover:hover-lift transition-all duration-500 ${
+              index === 0 ? 'animate-slide-left' : 
+              index === 1 ? 'animate-fade-in' : 'animate-slide-right'
+            }`}
+            style={`animation-delay: ${0.3 + index * 0.2}s`}
           >
-            <div class="w-16 h-16 bg-gradient-to-r from-gold-500 to-gold-600 rounded-2xl flex items-center justify-center mx-auto mb-6">
+            <div class="w-20 h-20 bg-gradient-to-r from-gold-500 to-gold-600 rounded-3xl flex items-center justify-center mx-auto mb-8">
               {index === 0 && (
-                <svg class="w-8 h-8 text-navy-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg class="w-10 h-10 text-navy-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
                 </svg>
               )}
               {index === 1 && (
-                <svg class="w-8 h-8 text-navy-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                <svg class="w-10 h-10 text-navy-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
                 </svg>
               )}
               {index === 2 && (
-                <svg class="w-8 h-8 text-navy-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg class="w-10 h-10 text-navy-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
                 </svg>
               )}
             </div>
             
-            <h3 class="text-xl font-bold text-gold-400 mb-4 font-crimson">
+            <h3 class="text-2xl font-bold text-gold-400 mb-6 font-crimson leading-tight">
               ✔️ {reason.title}
             </h3>
             
-            <p class="text-gray-300 font-crimson leading-relaxed">
+            <p class="text-gray-300 font-crimson leading-relaxed text-lg">
               {reason.description}
             </p>
           </div>
         ))}
       </div>
 
-      <div class="glass-strong p-8 rounded-3xl max-w-3xl mx-auto">
-        <div class="flex items-center justify-center mb-6">
-          <svg class="w-8 h-8 text-gold-400 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path>
-          </svg>
-          <h3 class="text-2xl font-bold text-white font-crimson">
-            Notre objectif
+      <!-- Enhanced guarantee section -->
+      <div class="glass-strong p-10 rounded-3xl max-w-4xl mx-auto animate-fade-in" style="animation-delay: 0.9s;">
+        <div class="flex items-center justify-center mb-8">
+          <div class="w-16 h-16 bg-gradient-to-r from-gold-500 to-gold-600 rounded-full flex items-center justify-center mr-6">
+            <svg class="w-8 h-8 text-navy-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path>
+            </svg>
+          </div>
+          <h3 class="text-3xl font-bold text-white font-crimson">
+            Notre engagement
           </h3>
         </div>
-        <p class="text-xl text-gray-300 font-crimson">
-          Des résultats concrets, rapides, et mesurables pour votre entreprise.
-        </p>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 text-left">
+          <div class="space-y-4">
+            <div class="flex items-center">
+              <svg class="w-6 h-6 text-gold-400 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+              </svg>
+              <span class="text-gray-300 font-crimson text-lg">Résultats mesurables en 90 jours</span>
+            </div>
+            <div class="flex items-center">
+              <svg class="w-6 h-6 text-gold-400 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+              </svg>
+              <span class="text-gray-300 font-crimson text-lg">Accompagnement personnalisé</span>
+            </div>
+          </div>
+          <div class="space-y-4">
+            <div class="flex items-center">
+              <svg class="w-6 h-6 text-gold-400 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+              </svg>
+              <span class="text-gray-300 font-crimson text-lg">Méthodes éprouvées et actualisées</span>
+            </div>
+            <div class="flex items-center">
+              <svg class="w-6 h-6 text-gold-400 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+              </svg>
+              <span class="text-gray-300 font-crimson text-lg">Support continu et réactif</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="mt-8 p-6 bg-gold-500/10 rounded-2xl border border-gold-500/20">
+          <p class="text-xl text-gold-300 font-crimson text-center leading-relaxed">
+            <strong>Notre objectif :</strong> Des résultats concrets, rapides, et durables pour votre entreprise.
+          </p>
+        </div>
       </div>
     </div>
   </div>
