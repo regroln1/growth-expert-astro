@@ -16,55 +16,60 @@ const benefits = [
 ---
 
 <section id="aia-method" class="py-20 lg:py-32 relative overflow-hidden">
-  <!-- Simple dark background -->
-  <div class="absolute inset-0 bg-navy-black"></div>
+  <!-- Sophisticated dark gradient background -->
+  <div class="absolute inset-0 bg-gradient-to-br from-slate-900 via-gray-900 to-black"></div>
   
-  <!-- Enhanced decorative elements -->
-  <div class="absolute top-20 right-10 w-72 h-72 bg-gold-500/10 rounded-full blur-3xl float-slow"></div>
-  <div class="absolute bottom-20 left-10 w-80 h-80 bg-blue-500/10 rounded-full blur-3xl float-medium"></div>
-  <div class="absolute top-1/2 right-1/4 w-48 h-48 bg-purple-500/8 rounded-full blur-2xl float-fast"></div>
+  <!-- Enhanced floating elements for depth -->
+  <div class="absolute top-20 right-10 w-72 h-72 bg-gold-500/8 rounded-full blur-3xl float-slow"></div>
+  <div class="absolute bottom-20 left-10 w-80 h-80 bg-blue-500/6 rounded-full blur-3xl float-medium"></div>
+  <div class="absolute top-1/2 right-1/4 w-48 h-48 bg-purple-500/5 rounded-full blur-2xl float-fast"></div>
 
   <div class="relative z-10 container mx-auto px-6 text-center">
     <div class="max-w-6xl mx-auto">
-      <!-- Enhanced section header -->
-      <div class="inline-flex items-center px-6 py-3 glass rounded-full mb-8 animate-fade-in">
-        <svg class="w-5 h-5 mr-3 text-gold-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
-        </svg>
-        <span class="text-sm font-medium text-gold-400">La Méthode Révolutionnaire</span>
+      <!-- Premium glassmorphism header card -->
+      <div class="premium-glass-card p-12 rounded-3xl mb-16 animate-fade-in">
+        <div class="inline-flex items-center px-6 py-3 glass-badge rounded-full mb-8">
+          <svg class="w-5 h-5 mr-3 text-gold-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+          </svg>
+          <span class="text-sm font-medium text-gold-400">La Méthode Révolutionnaire</span>
+        </div>
+
+        <h2 class="text-4xl lg:text-6xl font-bold text-white mb-8 font-crimson">
+          Ce que vous apporte la
+          <span class="text-gradient-gold block">Méthode AIA™</span>
+        </h2>
+
+        <p class="text-xl text-gray-300 font-crimson max-w-4xl mx-auto">
+          Un système éprouvé en 3 étapes pour transformer votre PME en machine de croissance
+        </p>
       </div>
-
-      <h2 class="text-4xl lg:text-6xl font-bold text-white mb-8 font-crimson animate-fade-in" style="animation-delay: 0.1s;">
-        Ce que vous apporte la
-        <span class="text-gradient-gold block">Méthode AIA™</span>
-      </h2>
-
-      <p class="text-xl text-gray-300 mb-16 font-crimson max-w-4xl mx-auto animate-fade-in" style="animation-delay: 0.2s;">
-        Un système éprouvé en 3 étapes pour transformer votre PME en machine de croissance
-      </p>
 
       <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
         {benefits.map((benefit, index) => (
           <div
-            class={`glass-strong p-10 rounded-3xl hover:hover-lift transition-all duration-500 ${
+            class={`glass-card-premium p-10 rounded-3xl hover:glass-card-hover transition-all duration-500 ${
               index === 0 ? 'animate-slide-left' : 
               index === 1 ? 'animate-fade-in' : 'animate-slide-right'
             }`}
             style={`animation-delay: ${0.3 + index * 0.2}s`}
           >
-            <div class="w-24 h-24 bg-gradient-to-r from-gold-500 to-gold-600 rounded-3xl flex items-center justify-center mx-auto mb-8">
+            <div class={`w-24 h-24 rounded-3xl flex items-center justify-center mx-auto mb-8 ${
+              index === 0 ? 'glass-icon-gold' : 
+              index === 1 ? 'glass-icon-blue' : 'glass-icon-purple'
+            }`}>
               {benefit.title === "Aligner" && (
-                <svg class="w-12 h-12 text-navy-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg class="w-12 h-12 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
                 </svg>
               )}
               {benefit.title === "Attirer" && (
-                <svg class="w-12 h-12 text-navy-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg class="w-12 h-12 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path>
                 </svg>
               )}
               {benefit.title === "Automatiser" && (
-                <svg class="w-12 h-12 text-navy-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg class="w-12 h-12 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"></path>
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
                 </svg>
@@ -75,13 +80,12 @@ const benefits = [
               {benefit.title}
             </h3>
             
-            <p class="text-gray-300 font-crimson text-lg leading-relaxed">
+            <p class="text-gray-300 font-crimson text-lg leading-relaxed mb-8">
               ✅ {benefit.description}
             </p>
 
-            <!-- Enhanced step indicator -->
-            <div class="mt-8 flex items-center justify-center">
-              <div class="w-8 h-8 bg-gold-500/20 rounded-full flex items-center justify-center">
+            <div class="flex items-center justify-center">
+              <div class="w-8 h-8 glass-step-indicator rounded-full flex items-center justify-center">
                 <span class="text-gold-400 font-bold text-sm">{index + 1}</span>
               </div>
             </div>
@@ -89,11 +93,11 @@ const benefits = [
         ))}
       </div>
 
-      <!-- Enhanced CTA without glow effect -->
+      <!-- Premium CTA with glassmorphism -->
       <div class="animate-fade-in" style="animation-delay: 0.9s;">
         <a
           href="/methode-aia"
-          class="inline-flex items-center px-10 py-5 cta-secondary-dark text-white font-semibold rounded-full hover-lift transition-all duration-300 text-lg"
+          class="inline-flex items-center px-10 py-5 glass-cta text-white font-semibold rounded-full hover:glass-cta-hover transition-all duration-300 text-lg"
         >
           Explorer la Méthode AIA™ en détail
           <svg class="ml-3 w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -104,3 +108,90 @@ const benefits = [
     </div>
   </div>
 </section>
+
+<style>
+  /* Premium Glassmorphism Effects */
+  .premium-glass-card {
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(20px) saturate(180%);
+    -webkit-backdrop-filter: blur(20px) saturate(180%);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    box-shadow: 
+      0 8px 32px rgba(0, 0, 0, 0.3),
+      inset 0 1px 0 rgba(255, 255, 255, 0.2),
+      inset 0 -1px 0 rgba(0, 0, 0, 0.1);
+  }
+
+  .glass-card-premium {
+    background: rgba(255, 255, 255, 0.06);
+    backdrop-filter: blur(16px) saturate(150%);
+    -webkit-backdrop-filter: blur(16px) saturate(150%);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 
+      0 6px 24px rgba(0, 0, 0, 0.2),
+      inset 0 1px 0 rgba(255, 255, 255, 0.15);
+  }
+
+  .glass-card-hover:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.2);
+    box-shadow: 
+      0 12px 36px rgba(0, 0, 0, 0.3),
+      inset 0 1px 0 rgba(255, 255, 255, 0.25);
+    transform: translateY(-8px);
+  }
+
+  .glass-badge {
+    background: rgba(251, 191, 36, 0.1);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(251, 191, 36, 0.2);
+  }
+
+  .glass-icon-gold {
+    background: rgba(251, 191, 36, 0.15);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(251, 191, 36, 0.3);
+  }
+
+  .glass-icon-blue {
+    background: rgba(59, 130, 246, 0.15);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(59, 130, 246, 0.3);
+  }
+
+  .glass-icon-purple {
+    background: rgba(147, 51, 234, 0.15);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(147, 51, 234, 0.3);
+  }
+
+  .glass-step-indicator {
+    background: rgba(251, 191, 36, 0.1);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border: 1px solid rgba(251, 191, 36, 0.2);
+  }
+
+  .glass-cta {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(16px) saturate(180%);
+    -webkit-backdrop-filter: blur(16px) saturate(180%);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 
+      0 8px 32px rgba(0, 0, 0, 0.2),
+      inset 0 1px 0 rgba(255, 255, 255, 0.2);
+  }
+
+  .glass-cta-hover:hover {
+    background: rgba(255, 255, 255, 0.15);
+    border-color: rgba(255, 255, 255, 0.3);
+    box-shadow: 
+      0 12px 40px rgba(0, 0, 0, 0.3),
+      inset 0 1px 0 rgba(255, 255, 255, 0.3);
+    transform: translateY(-2px);
+  }
+</style>

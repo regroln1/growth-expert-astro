@@ -2,124 +2,126 @@
 ---
 
 <section class="py-20 lg:py-32 relative overflow-hidden">
-  <!-- Dark background with gradient -->
-  <div class="absolute inset-0 bg-gradient-5"></div>
+  <!-- Sophisticated dark gradient background -->
+  <div class="absolute inset-0 bg-gradient-to-br from-slate-900 via-black to-gray-900"></div>
   
-  <!-- Enhanced floating elements for dark theme -->
-  <div class="absolute top-20 left-10 w-64 h-64 bg-red-500/10 rounded-full blur-3xl float-slow"></div>
-  <div class="absolute bottom-20 right-10 w-80 h-80 bg-green-500/10 rounded-full blur-3xl float-medium"></div>
-  <div class="absolute top-1/2 right-1/4 w-48 h-48 bg-blue-500/8 rounded-full blur-2xl float-fast"></div>
+  <!-- Enhanced floating elements for depth -->
+  <div class="absolute top-20 left-10 w-64 h-64 bg-red-500/6 rounded-full blur-3xl float-slow"></div>
+  <div class="absolute bottom-20 right-10 w-80 h-80 bg-green-500/8 rounded-full blur-3xl float-medium"></div>
+  <div class="absolute top-1/2 right-1/4 w-48 h-48 bg-blue-500/5 rounded-full blur-2xl float-fast"></div>
 
   <div class="relative z-10 container mx-auto px-6">
     <div class="max-w-6xl mx-auto">
-      <!-- Enhanced section header -->
+      <!-- Premium glassmorphism header card -->
       <div class="text-center mb-16">
-        <div class="inline-flex items-center px-6 py-3 glass rounded-full mb-8 animate-fade-in">
-          <svg class="w-5 h-5 mr-3 text-gold-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 9l3 3-3 3m13 0H3"></path>
-          </svg>
-          <span class="text-sm font-medium text-gold-400">Votre Choix Déterminant</span>
+        <div class="premium-glass-card p-12 rounded-3xl animate-fade-in">
+          <div class="inline-flex items-center px-6 py-3 glass-badge rounded-full mb-8">
+            <svg class="w-5 h-5 mr-3 text-gold-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 9l3 3-3 3m13 0H3"></path>
+            </svg>
+            <span class="text-sm font-medium text-gold-400">Votre Choix Déterminant</span>
+          </div>
+
+          <h2 class="text-4xl lg:text-6xl font-bold text-white mb-8 font-crimson">
+            Deux scénarios possibles pour
+            <span class="text-gradient-gold block">votre entreprise</span>
+          </h2>
+
+          <p class="text-xl text-gray-300 font-crimson max-w-4xl mx-auto">
+            Le futur de votre entreprise dépend des décisions que vous prenez aujourd'hui
+          </p>
         </div>
-
-        <h2 class="text-4xl lg:text-6xl font-bold text-white mb-8 font-crimson animate-fade-in" style="animation-delay: 0.1s;">
-          Deux scénarios possibles pour
-          <span class="text-gradient-gold block">votre entreprise</span>
-        </h2>
-
-        <p class="text-xl text-gray-300 mb-16 font-crimson max-w-4xl mx-auto animate-fade-in" style="animation-delay: 0.2s;">
-          Le futur de votre entreprise dépend des décisions que vous prenez aujourd'hui
-        </p>
       </div>
 
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
-        <!-- Negative Scenario - Enhanced -->
-        <div class="glass-strong border-l-4 border-red-500 p-10 rounded-3xl hover:hover-lift transition-all duration-500 animate-slide-left" style="animation-delay: 0.3s;">
+        <!-- Negative Scenario with Premium Glassmorphism -->
+        <div class="glass-card-negative p-10 rounded-3xl hover:glass-card-hover transition-all duration-500 animate-slide-left" style="animation-delay: 0.3s;">
           <div class="flex items-center mb-8">
-            <div class="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mr-6 shadow-lg">
-              <svg class="w-8 h-8 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <div class="w-16 h-16 glass-icon-red rounded-full flex items-center justify-center mr-6 shadow-lg">
+              <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
               </svg>
             </div>
-            <h3 class="text-3xl font-bold text-red-700 font-crimson">
+            <h3 class="text-3xl font-bold text-red-400 font-crimson">
               Sans action
             </h3>
           </div>
           
           <div class="space-y-6">
-            <div class="flex items-start p-4 bg-red-50/50 rounded-xl">
-              <span class="text-red-500 mr-4 mt-1 text-2xl">🚫</span>
+            <div class="flex items-start p-4 glass-problem-item rounded-xl">
+              <span class="text-red-400 mr-4 mt-1 text-2xl">🚫</span>
               <p class="text-gray-300 font-crimson text-lg leading-relaxed">
                 Vous continuez avec une acquisition fragile et un business non structuré
               </p>
             </div>
-            <div class="flex items-start p-4 bg-red-50/50 rounded-xl">
-              <span class="text-red-500 mr-4 mt-1 text-2xl">📉</span>
+            <div class="flex items-start p-4 glass-problem-item rounded-xl">
+              <span class="text-red-400 mr-4 mt-1 text-2xl">📉</span>
               <p class="text-gray-300 font-crimson text-lg leading-relaxed">
                 Votre croissance reste imprévisible et limitée par les aléas du marché
               </p>
             </div>
-            <div class="flex items-start p-4 bg-red-50/50 rounded-xl">
-              <span class="text-red-500 mr-4 mt-1 text-2xl">⏰</span>
+            <div class="flex items-start p-4 glass-problem-item rounded-xl">
+              <span class="text-red-400 mr-4 mt-1 text-2xl">⏰</span>
               <p class="text-gray-300 font-crimson text-lg leading-relaxed">
                 Vous restez dépendant de votre temps personnel sans possibilité de déléguer
               </p>
             </div>
           </div>
 
-          <!-- Impact indicator -->
-          <div class="mt-8 p-6 bg-red-100/50 rounded-2xl border border-red-200">
-            <p class="text-red-800 font-semibold text-center">
+          <!-- Impact indicator with glassmorphism -->
+          <div class="mt-8 glass-impact-negative p-6 rounded-2xl border border-red-400/20">
+            <p class="text-red-300 font-semibold text-center">
               Résultat : Stagnation et opportunités manquées
             </p>
           </div>
         </div>
 
-        <!-- Positive Scenario - Enhanced -->
-        <div class="glass-strong border-l-4 border-green-500 p-10 rounded-3xl hover:hover-lift transition-all duration-500 animate-slide-right" style="animation-delay: 0.5s;">
+        <!-- Positive Scenario with Premium Glassmorphism -->
+        <div class="glass-card-positive p-10 rounded-3xl hover:glass-card-hover transition-all duration-500 animate-slide-right" style="animation-delay: 0.5s;">
           <div class="flex items-center mb-8">
-            <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mr-6 shadow-lg">
-              <svg class="w-8 h-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <div class="w-16 h-16 glass-icon-green rounded-full flex items-center justify-center mr-6 shadow-lg">
+              <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
               </svg>
             </div>
-            <h3 class="text-3xl font-bold text-green-700 font-crimson">
+            <h3 class="text-3xl font-bold text-green-400 font-crimson">
               Avec la Méthode AIA™
             </h3>
           </div>
           
           <div class="space-y-6">
-            <div class="flex items-start p-4 bg-green-50/50 rounded-xl">
-              <span class="text-green-500 mr-4 mt-1 text-2xl">✅</span>
+            <div class="flex items-start p-4 glass-success-item rounded-xl">
+              <span class="text-green-400 mr-4 mt-1 text-2xl">✅</span>
               <p class="text-gray-300 font-crimson text-lg leading-relaxed">
                 Vous clarifiez votre offre et attirez automatiquement les bons clients
               </p>
             </div>
-            <div class="flex items-start p-4 bg-green-50/50 rounded-xl">
-              <span class="text-green-500 mr-4 mt-1 text-2xl">🚀</span>
+            <div class="flex items-start p-4 glass-success-item rounded-xl">
+              <span class="text-green-400 mr-4 mt-1 text-2xl">🚀</span>
               <p class="text-gray-300 font-crimson text-lg leading-relaxed">
                 Vous automatisez vos processus et libérez du temps pour la stratégie
               </p>
             </div>
-            <div class="flex items-start p-4 bg-green-50/50 rounded-xl">
-              <span class="text-green-500 mr-4 mt-1 text-2xl">📈</span>
+            <div class="flex items-start p-4 glass-success-item rounded-xl">
+              <span class="text-green-400 mr-4 mt-1 text-2xl">📈</span>
               <p class="text-gray-300 font-crimson text-lg leading-relaxed">
                 Vous scalez durablement votre entreprise avec des résultats prévisibles
               </p>
             </div>
           </div>
 
-          <!-- Success indicator -->
-          <div class="mt-8 p-6 bg-green-100/50 rounded-2xl border border-green-200">
-            <p class="text-green-800 font-semibold text-center">
+          <!-- Success indicator with glassmorphism -->
+          <div class="mt-8 glass-impact-positive p-6 rounded-2xl border border-green-400/20">
+            <p class="text-green-300 font-semibold text-center">
               Résultat : Croissance maîtrisée et liberté retrouvée
             </p>
           </div>
         </div>
       </div>
 
-      <!-- Enhanced central CTA with corrected button -->
+      <!-- Premium central CTA with glassmorphism -->
       <div class="text-center mt-16 animate-fade-in" style="animation-delay: 0.7s;">
-        <div class="glass-strong p-10 rounded-3xl max-w-4xl mx-auto">
+        <div class="premium-glass-card p-10 rounded-3xl max-w-4xl mx-auto">
           <h3 class="text-2xl font-bold text-white mb-6 font-crimson">
             Le choix vous appartient
           </h3>
@@ -129,7 +131,7 @@
           </p>
           <a
             href="#contact"
-            class="inline-flex items-center px-10 py-5 cta-secondary-dark text-white font-semibold rounded-full hover-lift transition-all duration-300 text-lg"
+            class="inline-flex items-center px-10 py-5 glass-cta-primary text-white font-semibold rounded-full hover:glass-cta-primary-hover transition-all duration-300 text-lg"
           >
             Choisir la croissance maintenant
             <svg class="ml-4 w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -141,3 +143,114 @@
     </div>
   </div>
 </section>
+
+<style>
+  /* Premium Glassmorphism Effects */
+  .premium-glass-card {
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(20px) saturate(180%);
+    -webkit-backdrop-filter: blur(20px) saturate(180%);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    box-shadow: 
+      0 8px 32px rgba(0, 0, 0, 0.3),
+      inset 0 1px 0 rgba(255, 255, 255, 0.2),
+      inset 0 -1px 0 rgba(0, 0, 0, 0.1);
+  }
+
+  .glass-card-negative {
+    background: rgba(255, 255, 255, 0.06);
+    backdrop-filter: blur(16px) saturate(150%);
+    -webkit-backdrop-filter: blur(16px) saturate(150%);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-left: 4px solid rgba(239, 68, 68, 0.5);
+    box-shadow: 
+      0 6px 24px rgba(0, 0, 0, 0.2),
+      inset 0 1px 0 rgba(255, 255, 255, 0.15);
+  }
+
+  .glass-card-positive {
+    background: rgba(255, 255, 255, 0.06);
+    backdrop-filter: blur(16px) saturate(150%);
+    -webkit-backdrop-filter: blur(16px) saturate(150%);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-left: 4px solid rgba(34, 197, 94, 0.5);
+    box-shadow: 
+      0 6px 24px rgba(0, 0, 0, 0.2),
+      inset 0 1px 0 rgba(255, 255, 255, 0.15);
+  }
+
+  .glass-card-hover:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.2);
+    box-shadow: 
+      0 12px 36px rgba(0, 0, 0, 0.3),
+      inset 0 1px 0 rgba(255, 255, 255, 0.25);
+    transform: translateY(-8px);
+  }
+
+  .glass-badge {
+    background: rgba(251, 191, 36, 0.1);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(251, 191, 36, 0.2);
+  }
+
+  .glass-icon-red {
+    background: rgba(239, 68, 68, 0.2);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(239, 68, 68, 0.3);
+  }
+
+  .glass-icon-green {
+    background: rgba(34, 197, 94, 0.2);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(34, 197, 94, 0.3);
+  }
+
+  .glass-problem-item {
+    background: rgba(239, 68, 68, 0.05);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border: 1px solid rgba(239, 68, 68, 0.1);
+  }
+
+  .glass-success-item {
+    background: rgba(34, 197, 94, 0.05);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border: 1px solid rgba(34, 197, 94, 0.1);
+  }
+
+  .glass-impact-negative {
+    background: rgba(239, 68, 68, 0.08);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+  }
+
+  .glass-impact-positive {
+    background: rgba(34, 197, 94, 0.08);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+  }
+
+  .glass-cta-primary {
+    background: linear-gradient(135deg, rgba(59, 130, 246, 0.2), rgba(147, 51, 234, 0.2));
+    backdrop-filter: blur(16px) saturate(180%);
+    -webkit-backdrop-filter: blur(16px) saturate(180%);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    box-shadow: 
+      0 8px 32px rgba(59, 130, 246, 0.2),
+      inset 0 1px 0 rgba(255, 255, 255, 0.2);
+  }
+
+  .glass-cta-primary-hover:hover {
+    background: linear-gradient(135deg, rgba(59, 130, 246, 0.3), rgba(147, 51, 234, 0.3));
+    border-color: rgba(255, 255, 255, 0.35);
+    box-shadow: 
+      0 12px 40px rgba(59, 130, 246, 0.3),
+      inset 0 1px 0 rgba(255, 255, 255, 0.3);
+    transform: translateY(-2px);
+  }
+</style>
