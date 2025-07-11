@@ -31,37 +31,30 @@ const benefits = [
 ---
 
 <section id="contact" class="py-20 lg:py-32 relative overflow-hidden">
-  <!-- OPTION 1: Circulaire plus visible -->
-  <div class="absolute inset-0" style="background: radial-gradient(ellipse at center, #ffffff 15%, #e5e7eb 50%, #d1d5db 100%);"></div>
+  <!-- Dark background with gradient -->
+  <div class="absolute inset-0 bg-gradient-7"></div>
   
-  <!-- OPTION 2: Diagonal - Décommentez pour tester
-  <div class="absolute inset-0" style="background: linear-gradient(315deg, #d1d5db 0%, #ffffff 30%, #ffffff 70%, #e5e7eb 100%);"></div>
-  -->
-  
-  <!-- OPTION 3: Top to Bottom - Décommentez pour tester  
-  <div class="absolute inset-0" style="background: linear-gradient(to bottom, #d1d5db 0%, #ffffff 20%, #ffffff 80%, #e5e7eb 100%);"></div>
-  -->
-  
-  <!-- Decorative Elements -->
-  <div class="absolute top-20 left-10 w-64 h-64 bg-blue-100 rounded-full blur-3xl opacity-40"></div>
-  <div class="absolute bottom-20 right-10 w-80 h-80 bg-purple-100 rounded-full blur-3xl opacity-40"></div>
+  <!-- Enhanced floating elements for dark theme -->
+  <div class="absolute top-20 left-10 w-64 h-64 bg-blue-500/10 rounded-full blur-3xl float-slow"></div>
+  <div class="absolute bottom-20 right-10 w-80 h-80 bg-purple-500/10 rounded-full blur-3xl float-medium"></div>
+  <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-48 h-48 bg-teal-500/8 rounded-full blur-2xl float-fast"></div>
 
   <div class="relative z-10 container mx-auto px-6">
     <!-- Section Header -->
     <div class="text-center mb-16">
       <div class="inline-flex items-center px-4 py-2 glass rounded-full mb-6">
-        <svg class="w-4 h-4 mr-2 text-navy-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <svg class="w-4 h-4 mr-2 text-gold-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"></path>
         </svg>
-        <span class="text-sm font-medium text-navy-700">Contact</span>
+        <span class="text-sm font-medium text-gold-400">Contact</span>
       </div>
       
-      <h2 class="text-4xl lg:text-6xl font-bold text-navy-900 mb-6 font-crimson">
+      <h2 class="text-4xl lg:text-6xl font-bold text-white mb-6 font-crimson">
         Transformons ensemble
-        <span class="text-gradient block">votre vision en réalité</span>
+        <span class="text-gradient-gold block">votre vision en réalité</span>
       </h2>
       
-      <p class="text-xl text-gray-600 max-w-3xl mx-auto font-crimson">
+      <p class="text-xl text-gray-300 max-w-3xl mx-auto font-crimson">
         Prenez rendez-vous pour une consultation gratuite et découvrons comment 
         accélérer la croissance de votre entreprise.
       </p>
@@ -70,14 +63,14 @@ const benefits = [
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-16">
       <!-- Contact Form -->
       <div class="glass-strong p-8 lg:p-12 rounded-3xl">
-        <h3 class="text-2xl font-bold text-navy-900 mb-6">
+        <h3 class="text-2xl font-bold text-white mb-6">
           Démarrons la conversation
         </h3>
 
         <form id="contact-form" class="space-y-6">
           <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div>
-              <label for="name" class="block text-sm font-medium text-navy-700 mb-2">
+              <label for="name" class="block text-sm font-medium text-gray-300 mb-2">
                 Nom complet *
               </label>
               <input
@@ -85,13 +78,13 @@ const benefits = [
                 id="name"
                 name="name"
                 required
-                class="w-full px-4 py-3 bg-white/50 border border-gray-200 rounded-xl focus:ring-2 focus:ring-navy-500 focus:border-navy-500 transition-all duration-200"
+                class="w-full px-4 py-3 bg-white/10 border border-gray-600 rounded-xl focus:ring-2 focus:ring-gold-500 focus:border-gold-500 transition-all duration-200 text-white placeholder-gray-400"
                 placeholder="Votre nom"
               />
             </div>
 
             <div>
-              <label for="email" class="block text-sm font-medium text-navy-700 mb-2">
+              <label for="email" class="block text-sm font-medium text-gray-300 mb-2">
                 Email *
               </label>
               <input
@@ -99,27 +92,27 @@ const benefits = [
                 id="email"
                 name="email"
                 required
-                class="w-full px-4 py-3 bg-white/50 border border-gray-200 rounded-xl focus:ring-2 focus:ring-navy-500 focus:border-navy-500 transition-all duration-200"
+                class="w-full px-4 py-3 bg-white/10 border border-gray-600 rounded-xl focus:ring-2 focus:ring-gold-500 focus:border-gold-500 transition-all duration-200 text-white placeholder-gray-400"
                 placeholder="votre@email.com"
               />
             </div>
           </div>
 
           <div>
-            <label for="company" class="block text-sm font-medium text-navy-700 mb-2">
+            <label for="company" class="block text-sm font-medium text-gray-300 mb-2">
               Entreprise
             </label>
             <input
               type="text"
               id="company"
               name="company"
-              class="w-full px-4 py-3 bg-white/50 border border-gray-200 rounded-xl focus:ring-2 focus:ring-navy-500 focus:border-navy-500 transition-all duration-200"
+              class="w-full px-4 py-3 bg-white/10 border border-gray-600 rounded-xl focus:ring-2 focus:ring-gold-500 focus:border-gold-500 transition-all duration-200 text-white placeholder-gray-400"
               placeholder="Nom de votre entreprise"
             />
           </div>
 
           <div>
-            <label for="message" class="block text-sm font-medium text-navy-700 mb-2">
+            <label for="message" class="block text-sm font-medium text-gray-300 mb-2">
               Message *
             </label>
             <textarea
@@ -127,7 +120,7 @@ const benefits = [
               name="message"
               required
               rows="6"
-              class="w-full px-4 py-3 bg-white/50 border border-gray-200 rounded-xl focus:ring-2 focus:ring-navy-500 focus:border-navy-500 transition-all duration-200 resize-none"
+              class="w-full px-4 py-3 bg-white/10 border border-gray-600 rounded-xl focus:ring-2 focus:ring-gold-500 focus:border-gold-500 transition-all duration-200 resize-none text-white placeholder-gray-400"
               placeholder="Parlez-moi de vos défis et objectifs..."
             ></textarea>
           </div>
@@ -147,7 +140,7 @@ const benefits = [
       <!-- Contact Info -->
       <div class="space-y-8">
         <div class="glass p-8 rounded-3xl">
-          <h3 class="text-2xl font-bold text-navy-900 mb-6">
+          <h3 class="text-2xl font-bold text-white mb-6">
             Informations de contact
           </h3>
 
@@ -178,16 +171,16 @@ const benefits = [
                   )}
                 </div>
                 <div>
-                  <h4 class="font-semibold text-navy-900 mb-1">{info.title}</h4>
+                  <h4 class="font-semibold text-white mb-1">{info.title}</h4>
                   {info.link ? (
                     <a
                       href={info.link}
-                      class="text-gray-600 hover:text-navy-700 transition-colors"
+                      class="text-gray-300 hover:text-gold-400 transition-colors"
                     >
                       {info.content}
                     </a>
                   ) : (
-                    <p class="text-gray-600">{info.content}</p>
+                    <p class="text-gray-300">{info.content}</p>
                   )}
                 </div>
               </div>
@@ -197,7 +190,7 @@ const benefits = [
 
         <!-- Benefits -->
         <div class="glass p-8 rounded-3xl">
-          <h3 class="text-2xl font-bold text-navy-900 mb-6">
+          <h3 class="text-2xl font-bold text-white mb-6">
             Pourquoi me choisir ?
           </h3>
 
@@ -207,7 +200,7 @@ const benefits = [
                 <svg class="w-5 h-5 text-green-500 mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
                 </svg>
-                <span class="text-gray-600">{benefit}</span>
+                <span class="text-gray-300">{benefit}</span>
               </div>
             ))}
           </div>
