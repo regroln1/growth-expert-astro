@@ -19,53 +19,51 @@ const steps = [
 ---
 
 <section class="py-20 lg:py-32 relative overflow-hidden">
-  <!-- Sophisticated dark gradient background -->
-  <div class="absolute inset-0 bg-gradient-to-br from-black via-gray-900 to-slate-900"></div>
+  <!-- Simple dark background -->
+  <div class="absolute inset-0 bg-navy-black"></div>
   
   <!-- Enhanced floating elements for depth -->
-  <div class="absolute top-20 left-10 w-64 h-64 bg-purple-500/6 rounded-full blur-3xl float-slow"></div>
-  <div class="absolute bottom-20 right-10 w-80 h-80 bg-blue-500/8 rounded-full blur-3xl float-medium"></div>
-  <div class="absolute top-1/2 left-1/4 w-48 h-48 bg-pink-500/5 rounded-full blur-2xl float-fast"></div>
+  <div class="absolute top-20 left-10 w-64 h-64 bg-purple-500/8 rounded-full blur-3xl float-slow"></div>
+  <div class="absolute bottom-20 right-10 w-80 h-80 bg-blue-500/10 rounded-full blur-3xl float-medium"></div>
+  <div class="absolute top-1/2 left-1/4 w-48 h-48 bg-pink-500/6 rounded-full blur-2xl float-fast"></div>
 
   <div class="relative z-10 container mx-auto px-6 text-center">
     <div class="max-w-6xl mx-auto">
-      <!-- Premium glassmorphism header card -->
-      <div class="premium-glass-card p-12 rounded-3xl mb-16 animate-fade-in">
-        <div class="inline-flex items-center px-6 py-3 glass-badge rounded-full mb-8">
-          <svg class="w-5 h-5 mr-3 text-gold-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path>
-          </svg>
-          <span class="text-sm font-medium text-gold-400">Processus Éprouvé</span>
-        </div>
-
-        <h2 class="text-4xl lg:text-6xl font-bold text-white mb-8 font-crimson">
-          Voici comment nous vous aidons à
-          <span class="text-gradient-gold block">réussir :</span>
-        </h2>
-
-        <p class="text-xl text-gray-300 font-crimson max-w-4xl mx-auto">
-          Un processus structuré en 3 étapes pour transformer votre vision en résultats concrets
-        </p>
+      <!-- Enhanced section header -->
+      <div class="inline-flex items-center px-6 py-3 glass rounded-full mb-8 animate-fade-in">
+        <svg class="w-5 h-5 mr-3 text-gold-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path>
+        </svg>
+        <span class="text-sm font-medium text-gold-400">Processus Éprouvé</span>
       </div>
+
+      <h2 class="text-4xl lg:text-6xl font-bold text-white mb-8 font-crimson animate-fade-in" style="animation-delay: 0.1s;">
+        Voici comment nous vous aidons à
+        <span class="text-gradient-gold block">réussir :</span>
+      </h2>
+
+      <p class="text-xl text-gray-300 font-crimson max-w-4xl mx-auto mb-16 animate-fade-in" style="animation-delay: 0.2s;">
+        Un processus structuré en 3 étapes pour transformer votre vision en résultats concrets
+      </p>
 
       <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
         {steps.map((step, index) => (
           <div
-            class={`relative glass-card-premium p-10 rounded-3xl hover:glass-card-hover transition-all duration-500 ${
+            class={`relative glass-strong p-10 rounded-3xl hover-lift transition-all duration-500 ${
               index === 0 ? 'animate-slide-left' : 
               index === 1 ? 'animate-fade-in' : 'animate-slide-right'
             }`}
             style={`animation-delay: ${0.3 + index * 0.2}s`}
           >
             <!-- Premium step number with glassmorphism -->
-            <div class="absolute -top-6 left-10 w-16 h-16 glass-step-number rounded-full flex items-center justify-center shadow-lg">
-              <span class="text-white font-bold text-2xl">{step.number}</span>
+            <div class="absolute -top-6 left-10 w-16 h-16 bg-gradient-to-r from-gold-500 to-gold-600 rounded-full flex items-center justify-center shadow-lg">
+              <span class="text-navy-900 font-bold text-2xl">{step.number}</span>
             </div>
 
             <!-- Premium icon with glassmorphism -->
             <div class={`w-20 h-20 rounded-3xl flex items-center justify-center mx-auto mb-8 mt-6 ${
-              index === 0 ? 'glass-icon-gold' : 
-              index === 1 ? 'glass-icon-blue' : 'glass-icon-purple'
+              index === 0 ? 'bg-gradient-to-r from-gold-500 to-gold-600' : 
+              index === 1 ? 'bg-gradient-to-r from-blue-500 to-blue-600' : 'bg-gradient-to-r from-purple-500 to-purple-600'
             }`}>
               {step.number === "1" && (
                 <svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -92,11 +90,11 @@ const steps = [
               {step.description}
             </p>
 
-            <!-- Enhanced connector arrow with glassmorphism -->
+            <!-- Enhanced connector arrow -->
             {index < steps.length - 1 && (
               <div class="hidden md:block absolute top-1/2 -right-6 transform -translate-y-1/2 z-10">
                 <div class="flex items-center">
-                  <div class="w-8 h-1 glass-connector"></div>
+                  <div class="w-8 h-1 bg-gold-400/70"></div>
                   <div class="w-0 h-0 border-l-8 border-l-gold-400/70 border-t-4 border-t-transparent border-b-4 border-b-transparent"></div>
                 </div>
               </div>
@@ -105,11 +103,11 @@ const steps = [
         ))}
       </div>
 
-      <!-- Premium CTA with glassmorphism -->
+      <!-- Enhanced CTA -->
       <div class="animate-fade-in" style="animation-delay: 0.9s;">
         <a
           href="#contact"
-          class="inline-flex items-center px-12 py-6 glass-cta-primary text-white font-semibold rounded-full hover:glass-cta-primary-hover transition-all duration-300 text-xl"
+          class="inline-flex items-center px-12 py-6 cta-primary text-white font-semibold rounded-full hover-lift transition-all duration-300 text-xl"
         >
           Réserver ma session stratégique gratuite
           <svg class="ml-4 w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -120,99 +118,3 @@ const steps = [
     </div>
   </div>
 </section>
-
-<style>
-  /* Premium Glassmorphism Effects */
-  .premium-glass-card {
-    background: rgba(255, 255, 255, 0.08);
-    backdrop-filter: blur(20px) saturate(180%);
-    -webkit-backdrop-filter: blur(20px) saturate(180%);
-    border: 1px solid rgba(255, 255, 255, 0.15);
-    box-shadow: 
-      0 8px 32px rgba(0, 0, 0, 0.3),
-      inset 0 1px 0 rgba(255, 255, 255, 0.2),
-      inset 0 -1px 0 rgba(0, 0, 0, 0.1);
-  }
-
-  .glass-card-premium {
-    background: rgba(255, 255, 255, 0.06);
-    backdrop-filter: blur(16px) saturate(150%);
-    -webkit-backdrop-filter: blur(16px) saturate(150%);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    box-shadow: 
-      0 6px 24px rgba(0, 0, 0, 0.2),
-      inset 0 1px 0 rgba(255, 255, 255, 0.15);
-  }
-
-  .glass-card-hover:hover {
-    background: rgba(255, 255, 255, 0.1);
-    border-color: rgba(255, 255, 255, 0.2);
-    box-shadow: 
-      0 12px 36px rgba(0, 0, 0, 0.3),
-      inset 0 1px 0 rgba(255, 255, 255, 0.25);
-    transform: translateY(-8px);
-  }
-
-  .glass-badge {
-    background: rgba(251, 191, 36, 0.1);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    border: 1px solid rgba(251, 191, 36, 0.2);
-  }
-
-  .glass-step-number {
-    background: linear-gradient(135deg, rgba(251, 191, 36, 0.3), rgba(251, 191, 36, 0.2));
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    border: 1px solid rgba(251, 191, 36, 0.4);
-    box-shadow: 
-      0 4px 16px rgba(251, 191, 36, 0.2),
-      inset 0 1px 0 rgba(255, 255, 255, 0.2);
-  }
-
-  .glass-icon-gold {
-    background: rgba(251, 191, 36, 0.15);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    border: 1px solid rgba(251, 191, 36, 0.3);
-  }
-
-  .glass-icon-blue {
-    background: rgba(59, 130, 246, 0.15);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    border: 1px solid rgba(59, 130, 246, 0.3);
-  }
-
-  .glass-icon-purple {
-    background: rgba(147, 51, 234, 0.15);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    border: 1px solid rgba(147, 51, 234, 0.3);
-  }
-
-  .glass-connector {
-    background: linear-gradient(90deg, rgba(251, 191, 36, 0.4), rgba(251, 191, 36, 0.6));
-    backdrop-filter: blur(4px);
-    -webkit-backdrop-filter: blur(4px);
-  }
-
-  .glass-cta-primary {
-    background: linear-gradient(135deg, rgba(59, 130, 246, 0.2), rgba(147, 51, 234, 0.2));
-    backdrop-filter: blur(16px) saturate(180%);
-    -webkit-backdrop-filter: blur(16px) saturate(180%);
-    border: 1px solid rgba(255, 255, 255, 0.25);
-    box-shadow: 
-      0 8px 32px rgba(59, 130, 246, 0.2),
-      inset 0 1px 0 rgba(255, 255, 255, 0.2);
-  }
-
-  .glass-cta-primary-hover:hover {
-    background: linear-gradient(135deg, rgba(59, 130, 246, 0.3), rgba(147, 51, 234, 0.3));
-    border-color: rgba(255, 255, 255, 0.35);
-    box-shadow: 
-      0 12px 40px rgba(59, 130, 246, 0.3),
-      inset 0 1px 0 rgba(255, 255, 255, 0.3);
-    transform: translateY(-2px);
-  }
-</style>

@@ -31,40 +31,38 @@ const benefits = [
 ---
 
 <section id="contact" class="py-20 lg:py-32 relative overflow-hidden">
-  <!-- Sophisticated dark gradient background -->
-  <div class="absolute inset-0 bg-gradient-to-br from-gray-900 via-slate-900 to-black"></div>
+  <!-- Simple dark background -->
+  <div class="absolute inset-0 bg-navy-black"></div>
   
   <!-- Enhanced floating elements for depth -->
-  <div class="absolute top-20 left-10 w-64 h-64 bg-blue-500/6 rounded-full blur-3xl float-slow"></div>
-  <div class="absolute bottom-20 right-10 w-80 h-80 bg-purple-500/8 rounded-full blur-3xl float-medium"></div>
-  <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-48 h-48 bg-teal-500/5 rounded-full blur-2xl float-fast"></div>
+  <div class="absolute top-20 left-10 w-64 h-64 bg-blue-500/8 rounded-full blur-3xl float-slow"></div>
+  <div class="absolute bottom-20 right-10 w-80 h-80 bg-purple-500/10 rounded-full blur-3xl float-medium"></div>
+  <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-48 h-48 bg-teal-500/6 rounded-full blur-2xl float-fast"></div>
 
   <div class="relative z-10 container mx-auto px-6">
-    <!-- Premium glassmorphism section header -->
+    <!-- Enhanced section header -->
     <div class="text-center mb-16">
-      <div class="premium-glass-card p-12 rounded-3xl">
-        <div class="inline-flex items-center px-4 py-2 glass-badge rounded-full mb-6">
-          <svg class="w-4 h-4 mr-2 text-gold-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"></path>
-          </svg>
-          <span class="text-sm font-medium text-gold-400">Contact</span>
-        </div>
-        
-        <h2 class="text-4xl lg:text-6xl font-bold text-white mb-6 font-crimson">
-          Transformons ensemble
-          <span class="text-gradient-gold block">votre vision en réalité</span>
-        </h2>
-        
-        <p class="text-xl text-gray-300 max-w-3xl mx-auto font-crimson">
-          Prenez rendez-vous pour une consultation gratuite et découvrons comment 
-          accélérer la croissance de votre entreprise.
-        </p>
+      <div class="inline-flex items-center px-6 py-3 glass rounded-full mb-8 animate-fade-in">
+        <svg class="w-4 h-4 mr-2 text-gold-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"></path>
+        </svg>
+        <span class="text-sm font-medium text-gold-400">Contact</span>
       </div>
+      
+      <h2 class="text-4xl lg:text-6xl font-bold text-white mb-6 font-crimson animate-fade-in" style="animation-delay: 0.1s;">
+        Transformons ensemble
+        <span class="text-gradient-gold block">votre vision en réalité</span>
+      </h2>
+      
+      <p class="text-xl text-gray-300 max-w-3xl mx-auto font-crimson animate-fade-in" style="animation-delay: 0.2s;">
+        Prenez rendez-vous pour une consultation gratuite et découvrons comment 
+        accélérer la croissance de votre entreprise.
+      </p>
     </div>
 
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-16">
-      <!-- Premium glassmorphism contact form -->
-      <div class="glass-card-premium p-8 lg:p-12 rounded-3xl hover:glass-card-hover transition-all duration-500">
+      <!-- Enhanced contact form -->
+      <div class="glass-strong p-8 lg:p-12 rounded-3xl hover-lift transition-all duration-500 animate-slide-left" style="animation-delay: 0.3s;">
         <h3 class="text-2xl font-bold text-white mb-6">
           Démarrons la conversation
         </h3>
@@ -80,7 +78,7 @@ const benefits = [
                 id="name"
                 name="name"
                 required
-                class="w-full px-4 py-3 glass-input rounded-xl focus:glass-input-focus transition-all duration-200 text-white placeholder-gray-400"
+                class="w-full px-4 py-3 glass rounded-xl focus:ring-2 focus:ring-gold-400 focus:border-transparent transition-all duration-200 text-white placeholder-gray-400 bg-white/5"
                 placeholder="Votre nom"
               />
             </div>
@@ -94,7 +92,7 @@ const benefits = [
                 id="email"
                 name="email"
                 required
-                class="w-full px-4 py-3 glass-input rounded-xl focus:glass-input-focus transition-all duration-200 text-white placeholder-gray-400"
+                class="w-full px-4 py-3 glass rounded-xl focus:ring-2 focus:ring-gold-400 focus:border-transparent transition-all duration-200 text-white placeholder-gray-400 bg-white/5"
                 placeholder="votre@email.com"
               />
             </div>
@@ -108,7 +106,7 @@ const benefits = [
               type="text"
               id="company"
               name="company"
-              class="w-full px-4 py-3 glass-input rounded-xl focus:glass-input-focus transition-all duration-200 text-white placeholder-gray-400"
+              class="w-full px-4 py-3 glass rounded-xl focus:ring-2 focus:ring-gold-400 focus:border-transparent transition-all duration-200 text-white placeholder-gray-400 bg-white/5"
               placeholder="Nom de votre entreprise"
             />
           </div>
@@ -122,14 +120,14 @@ const benefits = [
               name="message"
               required
               rows="6"
-              class="w-full px-4 py-3 glass-input rounded-xl focus:glass-input-focus transition-all duration-200 resize-none text-white placeholder-gray-400"
+              class="w-full px-4 py-3 glass rounded-xl focus:ring-2 focus:ring-gold-400 focus:border-transparent transition-all duration-200 resize-none text-white placeholder-gray-400 bg-white/5"
               placeholder="Parlez-moi de vos défis et objectifs..."
             ></textarea>
           </div>
 
           <button
             type="submit"
-            class="w-full inline-flex items-center justify-center px-8 py-4 glass-cta-primary text-white font-semibold rounded-xl hover:glass-cta-primary-hover transition-all duration-300"
+            class="w-full inline-flex items-center justify-center px-8 py-4 cta-primary text-white font-semibold rounded-xl hover-lift transition-all duration-300"
           >
             Envoyer le message
             <svg class="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -139,9 +137,9 @@ const benefits = [
         </form>
       </div>
 
-      <!-- Premium glassmorphism contact info -->
-      <div class="space-y-8">
-        <div class="glass-card-premium p-8 rounded-3xl hover:glass-card-hover transition-all duration-500">
+      <!-- Enhanced contact info -->
+      <div class="space-y-8 animate-slide-right" style="animation-delay: 0.5s;">
+        <div class="glass-strong p-8 rounded-3xl hover-lift transition-all duration-500">
           <h3 class="text-2xl font-bold text-white mb-6">
             Informations de contact
           </h3>
@@ -150,9 +148,9 @@ const benefits = [
             {contactInfo.map((info, index) => (
               <div class="flex items-start">
                 <div class={`w-12 h-12 rounded-xl flex items-center justify-center mr-4 flex-shrink-0 ${
-                  index === 0 ? 'glass-icon-gold' : 
-                  index === 1 ? 'glass-icon-blue' : 
-                  index === 2 ? 'glass-icon-purple' : 'glass-icon-teal'
+                  index === 0 ? 'bg-gradient-to-r from-gold-500 to-gold-600' : 
+                  index === 1 ? 'bg-gradient-to-r from-blue-500 to-blue-600' : 
+                  index === 2 ? 'bg-gradient-to-r from-purple-500 to-purple-600' : 'bg-gradient-to-r from-teal-500 to-teal-600'
                 }`}>
                   {index === 0 && (
                     <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -194,8 +192,8 @@ const benefits = [
           </div>
         </div>
 
-        <!-- Premium glassmorphism benefits -->
-        <div class="glass-card-premium p-8 rounded-3xl hover:glass-card-hover transition-all duration-500">
+        <!-- Enhanced benefits -->
+        <div class="glass-strong p-8 rounded-3xl hover-lift transition-all duration-500">
           <h3 class="text-2xl font-bold text-white mb-6">
             Pourquoi me choisir ?
           </h3>
@@ -249,106 +247,3 @@ const benefits = [
     }
   });
 </script>
-
-<style>
-  /* Premium Glassmorphism Effects */
-  .premium-glass-card {
-    background: rgba(255, 255, 255, 0.08);
-    backdrop-filter: blur(20px) saturate(180%);
-    -webkit-backdrop-filter: blur(20px) saturate(180%);
-    border: 1px solid rgba(255, 255, 255, 0.15);
-    box-shadow: 
-      0 8px 32px rgba(0, 0, 0, 0.3),
-      inset 0 1px 0 rgba(255, 255, 255, 0.2),
-      inset 0 -1px 0 rgba(0, 0, 0, 0.1);
-  }
-
-  .glass-card-premium {
-    background: rgba(255, 255, 255, 0.06);
-    backdrop-filter: blur(16px) saturate(150%);
-    -webkit-backdrop-filter: blur(16px) saturate(150%);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    box-shadow: 
-      0 6px 24px rgba(0, 0, 0, 0.2),
-      inset 0 1px 0 rgba(255, 255, 255, 0.15);
-  }
-
-  .glass-card-hover:hover {
-    background: rgba(255, 255, 255, 0.1);
-    border-color: rgba(255, 255, 255, 0.2);
-    box-shadow: 
-      0 12px 36px rgba(0, 0, 0, 0.3),
-      inset 0 1px 0 rgba(255, 255, 255, 0.25);
-    transform: translateY(-8px);
-  }
-
-  .glass-badge {
-    background: rgba(251, 191, 36, 0.1);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    border: 1px solid rgba(251, 191, 36, 0.2);
-  }
-
-  .glass-input {
-    background: rgba(255, 255, 255, 0.05);
-    backdrop-filter: blur(8px);
-    -webkit-backdrop-filter: blur(8px);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-  }
-
-  .glass-input-focus:focus {
-    background: rgba(255, 255, 255, 0.08);
-    border-color: rgba(251, 191, 36, 0.5);
-    outline: none;
-    box-shadow: 
-      0 0 0 3px rgba(251, 191, 36, 0.1),
-      inset 0 1px 0 rgba(255, 255, 255, 0.1);
-  }
-
-  .glass-icon-gold {
-    background: rgba(251, 191, 36, 0.15);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    border: 1px solid rgba(251, 191, 36, 0.3);
-  }
-
-  .glass-icon-blue {
-    background: rgba(59, 130, 246, 0.15);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    border: 1px solid rgba(59, 130, 246, 0.3);
-  }
-
-  .glass-icon-purple {
-    background: rgba(147, 51, 234, 0.15);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    border: 1px solid rgba(147, 51, 234, 0.3);
-  }
-
-  .glass-icon-teal {
-    background: rgba(20, 184, 166, 0.15);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    border: 1px solid rgba(20, 184, 166, 0.3);
-  }
-
-  .glass-cta-primary {
-    background: linear-gradient(135deg, rgba(59, 130, 246, 0.2), rgba(147, 51, 234, 0.2));
-    backdrop-filter: blur(16px) saturate(180%);
-    -webkit-backdrop-filter: blur(16px) saturate(180%);
-    border: 1px solid rgba(255, 255, 255, 0.25);
-    box-shadow: 
-      0 8px 32px rgba(59, 130, 246, 0.2),
-      inset 0 1px 0 rgba(255, 255, 255, 0.2);
-  }
-
-  .glass-cta-primary-hover:hover {
-    background: linear-gradient(135deg, rgba(59, 130, 246, 0.3), rgba(147, 51, 234, 0.3));
-    border-color: rgba(255, 255, 255, 0.35);
-    box-shadow: 
-      0 12px 40px rgba(59, 130, 246, 0.3),
-      inset 0 1px 0 rgba(255, 255, 255, 0.3);
-    transform: translateY(-2px);
-  }
-</style>
