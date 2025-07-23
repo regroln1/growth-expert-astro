@@ -63,7 +63,7 @@ const articles = [
             <!-- Enhanced header -->
             <div class="flex items-center justify-between mb-6">
               <div class={`w-14 h-14 rounded-2xl flex items-center justify-center ${
-                index === 0 ? 'bg-gradient-to-r from-green-500 to-green-600' : 
+                index === 0 ? 'bg-gradient-to-r from-emerald-500 to-emerald-600' : 
                 index === 1 ? 'bg-gradient-to-r from-blue-500 to-blue-600' : 'bg-gradient-to-r from-purple-500 to-purple-600'
               }`}>
                 <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -89,12 +89,15 @@ const articles = [
               {article.excerpt}
             </p>
 
-            <button class="group inline-flex items-center text-gold-400 font-semibold hover:text-gold-300 transition-all duration-300">
+            <a href="/blog" class={`group inline-flex items-center font-semibold transition-all duration-300 ${
+              index === 0 ? 'text-emerald-400 hover:text-emerald-300' : 
+              index === 1 ? 'text-blue-400 hover:text-blue-300' : 'text-purple-400 hover:text-purple-300'
+            }`}>
               Lire l'article complet
               <svg class="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
               </svg>
-            </button>
+            </a>
           </article>
         ))}
       </div>
