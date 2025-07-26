@@ -2,6 +2,12 @@
 import Layout from '../../layouts/Layout.astro';
 import Header from '../../components/Header.astro';
 import Footer from '../../components/Footer.astro';
+import { getAllPosts, getAllTags, formatDate, getReadingTime } from '../../utils/blog';
+import type { BlogPost } from '../../types';
+
+// ✅ Typage explicite
+const allPosts: BlogPost[] = await getAllPosts();
+const allTags: string[] = getAllTags(allPosts);
 ---
 
 <Layout 
@@ -10,19 +16,213 @@ import Footer from '../../components/Footer.astro';
 >
   <Header />
   <main class="pt-20">
-    <section class="py-20 lg:py-32">
-      <div class="container mx-auto px-6 text-center">
-        <h1 class="text-4xl lg:text-5xl font-bold text-navy-900 mb-8 font-crimson">
-          Blog Growth Expert
-        </h1>
-        <div class="glass p-8 rounded-3xl max-w-2xl mx-auto">
-          <p class="text-lg text-gray-700">
-            Articles et conseils d'expert à venir...
+    <!-- Hero Section -->
+    <section class="py-20 lg:py-32 relative overflow-hidden bg-gradient-to-br from-gray-50 via-white to-blue-50">
+      <div class="absolute top-20 left-10 w-64 h-64 bg-blue-500/5 rounded-full blur-3xl float-slow"></div>
+      <div class="absolute bottom-20 right-10 w-80 h-80 bg-purple-500/5 rounded-full blur-3xl float-medium"></div>
+      <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-48 h-48 bg-amber-500/5 rounded-full blur-2xl float-fast"></div>
+
+      <div class="relative z-10 container mx-auto px-6">
+        <div class="max-w-4xl mx-auto text-center">
+          <div class="inline-flex items-center px-6 py-3 bg-white/80 backdrop-blur-sm border border-blue-200/50 rounded-full mb-8 animate-fade-in shadow-sm">
+            <svg class="w-5 h-5 mr-3 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path>
+            </svg>
+            <span class="text-sm font-semibold text-blue-600">Blog Growth Expert</span>
+          </div>
+
+          <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-navy-900 mb-8 font-crimson animate-fade-in leading-tight" style="animation-delay: 0.1s;">
+            Stratégies et conseils pour
+            <span class="text-gradient-gold block">faire croître votre PME</span>
+          </h1>
+
+          <p class="text-xl text-gray-600 mb-12 font-crimson leading-relaxed animate-fade-in max-w-3xl mx-auto" style="animation-delay: 0.2s;">
+            Découvrez nos articles, guides pratiques et retours d'expérience pour accélérer la croissance de votre entreprise
           </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Search and Filter Section -->
+    <section class="py-12 bg-white border-b border-gray-200">
+      <div class="container mx-auto px-6">
+        <div class="max-w-4xl mx-auto">
+          <!-- Search Bar -->
+          <div class="mb-8">
+            <div class="relative">
+              <input
+                type="text"
+                id="search-input"
+                placeholder="Rechercher un article..."
+                class="w-full px-6 py-4 pl-12 border border-gray-300 rounded-2xl focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200 text-lg font-crimson"
+              />
+              <svg class="absolute left-4 top-1/2 transform -translate-y-1/2 w-6 h-6 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+              </svg>
+            </div>
+          </div>
+
+          <!-- Tags Filter -->
+          <div class="mb-8">
+            <h3 class="text-lg font-semibold text-navy-900 mb-4 font-crimson">Filtrer par catégorie :</h3>
+            <div class="flex flex-wrap gap-3">
+              <button
+                class="tag-filter active px-4 py-2 bg-blue-600 text-white rounded-full hover:bg-blue-700 transition-all duration-200 text-sm font-medium"
+                data-tag="all"
+              >
+                Tous les articles
+              </button>
+              {allTags.map((tag: string) => (
+                <button
+                  class="tag-filter px-4 py-2 bg-gray-100 text-gray-700 rounded-full hover:bg-gray-200 transition-all duration-200 text-sm font-medium"
+                  data-tag={tag}
+                >
+                  {tag}
+                </button>
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Blog Posts Grid -->
+    <section class="py-20">
+      <div class="container mx-auto px-6">
+        <div class="max-w-7xl mx-auto">
+          <div id="posts-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {allPosts.map((post: BlogPost, index: number) => (
+              <article
+                class="blog-post bg-white rounded-2xl shadow-lg border border-gray-100 hover:shadow-xl transition-all duration-300 hover:-translate-y-2 overflow-hidden"
+                data-tags={post.data.tags.join(',')}
+                data-title={post.data.title.toLowerCase()}
+                data-description={post.data.description.toLowerCase()}
+              >
+                {post.data.image && (
+                  <div class="aspect-video overflow-hidden">
+                    <img 
+                      src={post.data.image} 
+                      alt={post.data.title}
+                      class="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                    />
+                  </div>
+                )}
+                
+                <div class="p-8">
+                  <div class="flex flex-wrap gap-2 mb-4">
+                    {post.data.tags.slice(0, 2).map((tag: string) => (
+                      <span class="px-3 py-1 bg-blue-100 text-blue-700 text-xs font-medium rounded-full">
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+
+                  <h2 class="text-xl font-bold text-navy-900 mb-4 font-crimson leading-tight hover:text-blue-600 transition-colors">
+                    <a href={`/blog/${post.slug}`}>
+                      {post.data.title}
+                    </a>
+                  </h2>
+
+                  <p class="text-gray-600 mb-6 font-crimson leading-relaxed">
+                    {post.data.description}
+                  </p>
+
+                  <div class="flex items-center justify-between text-sm text-gray-500 mb-6">
+                    <span class="font-crimson">{formatDate(post.data.pubDate)}</span>
+                    <span class="font-crimson">{getReadingTime(post.body)} min de lecture</span>
+                  </div>
+
+                  <a
+                    href={`/blog/${post.slug}`}
+                    class="inline-flex items-center text-blue-600 hover:text-blue-700 font-semibold transition-colors group"
+                  >
+                    Lire l'article
+                    <svg class="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                    </svg>
+                  </a>
+                </div>
+              </article>
+            ))}
+          </div>
+
+          <div id="no-results" class="hidden text-center py-16">
+            <div class="max-w-md mx-auto">
+              <svg class="w-16 h-16 text-gray-400 mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.172 16.172a4 4 0 015.656 0M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 01-2-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+              </svg>
+              <h3 class="text-xl font-semibold text-gray-700 mb-2 font-crimson">Aucun article trouvé</h3>
+              <p class="text-gray-500 font-crimson">Essayez de modifier vos critères de recherche ou de filtrage.</p>
+            </div>
+          </div>
         </div>
       </div>
     </section>
   </main>
   <Footer />
 </Layout>
-EOF
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const searchInput = document.getElementById('search-input');
+    const tagFilters = document.querySelectorAll<HTMLButtonElement>('.tag-filter');
+    const postsGrid = document.getElementById('posts-grid');
+    const noResults = document.getElementById('no-results');
+    const allPosts = document.querySelectorAll<HTMLElement>('.blog-post');
+
+    let currentTag = 'all';
+    let currentSearch = '';
+
+    function filterPosts() {
+      let visibleCount = 0;
+
+      allPosts.forEach((post) => {
+        const tags = post.dataset.tags?.split(',') || [];
+        const title = post.dataset.title || '';
+        const description = post.dataset.description || '';
+
+        const matchesTag = currentTag === 'all' || tags.includes(currentTag);
+        const matchesSearch =
+          currentSearch === '' ||
+          title.includes(currentSearch.toLowerCase()) ||
+          description.includes(currentSearch.toLowerCase()) ||
+          tags.some((tag) => tag.toLowerCase().includes(currentSearch.toLowerCase()));
+
+        if (matchesTag && matchesSearch) {
+          post.style.display = 'block';
+          visibleCount++;
+        } else {
+          post.style.display = 'none';
+        }
+      });
+
+      if (visibleCount === 0) {
+        noResults?.classList.remove('hidden');
+        postsGrid?.classList.add('hidden');
+      } else {
+        noResults?.classList.add('hidden');
+        postsGrid?.classList.remove('hidden');
+      }
+    }
+
+    searchInput?.addEventListener('input', (e) => {
+      currentSearch = (e.target as HTMLInputElement).value;
+      filterPosts();
+    });
+
+    tagFilters.forEach((button) => {
+      button.addEventListener('click', () => {
+        tagFilters.forEach((btn) => {
+          btn.classList.remove('active', 'bg-blue-600', 'text-white');
+          btn.classList.add('bg-gray-100', 'text-gray-700');
+        });
+
+        button.classList.add('active', 'bg-blue-600', 'text-white');
+        button.classList.remove('bg-gray-100', 'text-gray-700');
+
+        currentTag = button.dataset.tag || 'all';
+        filterPosts();
+      });
+    });
+  });
+</script>
