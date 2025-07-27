@@ -1,0 +1,30 @@
+---
+const {
+  bg = 'bg-white',
+  text = 'text-black',
+  gradientToNext = '',
+  padding = 'py-16',
+  container = true,
+  id,
+  class: extraClass = ''
+} = Astro.props;
+---
+
+<section
+  class={`${bg} ${text} ${padding} relative w-full ${extraClass}`}
+  {...(id ? { id } : {})}
+>
+  {container ? (
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <slot />
+    </div>
+  ) : (
+    <slot />
+  )}
+
+  {gradientToNext && (
+    <div
+      class={`absolute bottom-0 left-0 w-full h-32 pointer-events-none bg-gradient-to-b from-transparent to-${gradientToNext} z-10`}
+    />
+  )}
+</section>

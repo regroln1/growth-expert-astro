@@ -1,0 +1,91 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Hero from '../components/Hero.astro';
+import StakesSection from '../components/StakesSection.astro';
+import AIAMethod from '../components/AIAMethod.astro';
+import GuideSection from '../components/GuideSection.astro';
+import ThreeStepsSection from '../components/ThreeStepsSection.astro';
+import TwoScenariosSection from '../components/TwoScenariosSection.astro';
+import WhyItWorksSection from '../components/WhyItWorksSection.astro';
+import FreeResourcesSection from '../components/FreeResourcesSection.astro';
+import BlogPreviewSection from '../components/BlogPreviewSection.astro';
+import Contact from '../components/Contact.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<Layout 
+  title="Growth Expert - Libérez le Potentiel de Votre PME avec la Méthode AIA™"
+  description="Découvrez la Méthode AIA™ : un système en 3 étapes pour structurer votre croissance, automatiser vos processus et intégrer l'IA utile. Transformez votre PME en machine de croissance prévisible."
+  type="website"
+>
+  <div class="min-h-screen">
+    <Header />
+    <main>
+      <Hero />
+      <div class="animate-on-scroll">
+        <StakesSection />
+      </div>
+      <div class="animate-on-scroll">
+        <AIAMethod />
+      </div>
+      <div class="animate-on-scroll">
+        <GuideSection />
+      </div>
+      <div class="animate-on-scroll">
+        <ThreeStepsSection />
+      </div>
+      <div class="animate-on-scroll">
+        <TwoScenariosSection />
+      </div>
+      <div class="animate-on-scroll">
+        <WhyItWorksSection />
+      </div>
+      <div class="animate-on-scroll">
+        <FreeResourcesSection />
+      </div>
+      <div class="animate-on-scroll">
+        <BlogPreviewSection />
+      </div>
+      <div class="animate-on-scroll">
+        <Contact />
+      </div>
+    </main>
+    <Footer />
+  </div>
+</Layout>
+
+<script>
+  // Smooth scroll animation observer
+  const observerOptions = {
+    threshold: 0.1,
+    rootMargin: '0px 0px -50px 0px'
+  };
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('in-view');
+      }
+    });
+  }, observerOptions);
+
+  // Observe all animate-on-scroll elements
+  const animateElements = document.querySelectorAll('.animate-on-scroll');
+  animateElements.forEach((el) => observer.observe(el));
+</script>
+
+<style>
+  /* Animations for page load */
+  .animate-on-scroll {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.6s ease-out;
+  }
+
+  .animate-on-scroll.in-view {
+    opacity: 1;
+    transform: translateY(0);
+  }
+</style>
+</Layout>

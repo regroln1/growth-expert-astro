@@ -1,0 +1,290 @@
+---
+const benefits = [
+  {
+    title: "Aligner",
+    description: "Une offre irrésistible et différenciante"
+  },
+  {
+    title: "Attirer", 
+    description: "Un moteur d'acquisition automatisé"
+  },
+  {
+    title: "Automatiser",
+    description: "Un système interne optimisé pour scaler durablement"
+  }
+];
+---
+
+<section id="aia-method" class="py-20 lg:py-32 relative overflow-hidden">
+  <!-- Sophisticated dark gradient background -->
+  <div class="absolute inset-0 bg-navy-black"></div>
+  
+  <!-- Enhanced floating elements for depth -->
+  <div class="absolute top-20 right-10 w-72 h-72 bg-amber-500/15 rounded-full blur-3xl float-slow"></div>
+  <div class="absolute bottom-20 left-10 w-80 h-80 bg-blue-500/25 rounded-full blur-3xl float-medium"></div>
+  <div class="absolute top-1/2 right-1/4 w-48 h-48 bg-purple-500/25 rounded-full blur-2xl float-fast"></div>
+
+  <div class="relative z-10 container mx-auto px-6 text-center">
+    <div class="max-w-6xl mx-auto">
+      <!-- Enhanced section header -->
+      <div class="text-center mb-16">
+        <div class="inline-flex items-center px-6 py-3 glass rounded-full mb-8 animate-fade-in">
+          <svg class="w-5 h-5 mr-3 text-amber-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+          </svg>
+          <span class="text-sm font-medium text-amber-400">La Méthode Révolutionnaire</span>
+        </div>
+
+        <h2 class="text-4xl lg:text-6xl font-bold text-white mb-8 font-crimson animate-fade-in" style="animation-delay: 0.1s;">
+          Ce que vous apporte la
+          <span class="text-gradient-gold block">Méthode AIA™</span>
+        </h2>
+
+        <p class="text-xl text-gray-300 font-crimson max-w-4xl mx-auto animate-fade-in" style="animation-delay: 0.2s;">
+          Un système éprouvé en 3 étapes pour transformer votre PME en machine de croissance
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+        {benefits.map((benefit, index) => (
+          <div
+            class={`glass-card-premium p-10 rounded-3xl hover:glass-card-hover hover-lift transition-all duration-500 ${
+              index === 0 ? 'animate-slide-left' : 
+              index === 1 ? 'animate-fade-in' : 'animate-slide-right'
+            }`}
+            style={`animation-delay: ${0.3 + index * 0.2}s`}
+          >
+            <div class={`w-24 h-24 rounded-3xl flex items-center justify-center mx-auto mb-8 ${
+              index === 0 ? 'glass-icon-gold' : 
+              index === 1 ? 'glass-icon-blue' : 'glass-icon-purple'
+            }`}>
+              {benefit.title === "Aligner" && (
+                <svg class="w-12 h-12 text-amber-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                </svg>
+              )}
+              {benefit.title === "Attirer" && (
+                <svg class="w-12 h-12 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path>
+                </svg>
+              )}
+              {benefit.title === "Automatiser" && (
+                <svg class="w-12 h-12 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"></path>
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                </svg>
+              )}
+            </div>
+            
+            <h3 class="text-3xl font-bold text-white mb-6 font-crimson">
+              {benefit.title}
+            </h3>
+            
+            <p class="text-gray-300 font-crimson text-lg leading-relaxed mb-8">
+              ✅ {benefit.description}
+            </p>
+
+            <div class="flex items-center justify-center">
+              <div class="w-8 h-8 glass-step-indicator rounded-full flex items-center justify-center">
+                <span class="text-white font-bold text-sm">{index + 1}</span>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <!-- Premium CTA with glassmorphism and hover effects -->
+      <div class="animate-fade-in" style="animation-delay: 0.9s;">
+        <a
+          href="/methode-aia"
+          class="inline-flex items-center px-10 py-5 cta-primary text-white font-semibold rounded-full hover-lift transition-all duration-300 text-lg"
+        >
+          Explorer la Méthode AIA™ en détail
+          <svg class="ml-3 w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  /* Premium Glassmorphism Effects */
+  .premium-glass-card {
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(20px) saturate(180%);
+    -webkit-backdrop-filter: blur(20px) saturate(180%);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    box-shadow: 
+      0 8px 32px rgba(0, 0, 0, 0.3),
+      inset 0 1px 0 rgba(255, 255, 255, 0.2),
+      inset 0 -1px 0 rgba(0, 0, 0, 0.1);
+  }
+
+  .glass-card-premium {
+    background: rgba(255, 255, 255, 0.06);
+    backdrop-filter: blur(16px) saturate(150%);
+    -webkit-backdrop-filter: blur(16px) saturate(150%);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 
+      0 6px 24px rgba(0, 0, 0, 0.2),
+      inset 0 1px 0 rgba(255, 255, 255, 0.15);
+  }
+
+  .glass-card-hover:hover {
+    background: rgba(255, 255, 255, 0.12);
+    border-color: rgba(255, 255, 255, 0.25);
+    box-shadow: 
+      0 16px 48px rgba(0, 0, 0, 0.4),
+      inset 0 1px 0 rgba(255, 255, 255, 0.3);
+  }
+
+  .glass-badge {
+    background: rgba(251, 191, 36, 0.1);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(251, 191, 36, 0.2);
+  }
+
+  .glass-icon-gold {
+    background: rgba(251, 191, 36, 0.15);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(251, 191, 36, 0.3);
+  }
+
+  .glass-icon-blue {
+    background: rgba(59, 130, 246, 0.15);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(59, 130, 246, 0.3);
+  }
+
+  .glass-icon-purple {
+    background: rgba(147, 51, 234, 0.15);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(147, 51, 234, 0.3);
+  }
+
+  .glass-step-indicator {
+    background: rgba(251, 191, 36, 0.1);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border: 1px solid rgba(251, 191, 36, 0.2);
+  }
+
+  .glass-cta {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(16px) saturate(180%);
+    -webkit-backdrop-filter: blur(16px) saturate(180%);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 
+      0 8px 32px rgba(0, 0, 0, 0.2),
+      inset 0 1px 0 rgba(255, 255, 255, 0.2);
+  }
+
+  .glass-cta-hover:hover {
+    background: rgba(255, 255, 255, 0.15);
+    border-color: rgba(255, 255, 255, 0.3);
+    box-shadow: 
+      0 12px 40px rgba(0, 0, 0, 0.3),
+      inset 0 1px 0 rgba(255, 255, 255, 0.3);
+  }
+
+  /* Enhanced hover effects */
+  .hover-lift {
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  }
+
+  .hover-lift:hover {
+    transform: translateY(-8px) scale(1.02);
+  }
+
+  /* Floating animations */
+  .float-slow {
+    animation: float-slow 8s ease-in-out infinite;
+  }
+
+  .float-medium {
+    animation: float-medium 6s ease-in-out infinite;
+  }
+
+  .float-fast {
+    animation: float-fast 4s ease-in-out infinite;
+  }
+
+  @keyframes float-slow {
+    0%, 100% {
+      transform: translateY(0px) rotate(0deg);
+    }
+    50% {
+      transform: translateY(-20px) rotate(2deg);
+    }
+  }
+
+  @keyframes float-medium {
+    0%, 100% {
+      transform: translateY(0px) rotate(0deg);
+    }
+    50% {
+      transform: translateY(-15px) rotate(-1deg);
+    }
+  }
+
+  @keyframes float-fast {
+    0%, 100% {
+      transform: translateY(0px) rotate(0deg);
+    }
+    50% {
+      transform: translateY(-10px) rotate(1deg);
+    }
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes slideInFromLeft {
+    from {
+      opacity: 0;
+      transform: translateX(-50px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  @keyframes slideInFromRight {
+    from {
+      opacity: 0;
+      transform: translateX(50px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  /* Animation classes */
+  .animate-fade-in {
+    animation: fadeIn 0.8s ease-out forwards;
+  }
+
+  .animate-slide-left {
+    animation: slideInFromLeft 0.8s ease-out forwards;
+  }
+
+  .animate-slide-right {
+    animation: slideInFromRight 0.8s ease-out forwards;
+  }
+</style>

@@ -1,0 +1,35 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<Layout 
+  title="Travailler avec moi - Growth Expert"
+  description="Découvrez comment nous pouvons travailler ensemble pour faire croître votre entreprise"
+  type="website"
+>
+  <Header />
+  <main class="pt-20">
+    <section class="py-20 lg:py-32">
+      <div class="container mx-auto px-6 text-center">
+        <h1 class="text-4xl lg:text-5xl font-bold text-navy-900 mb-8 font-crimson">
+          Travailler avec moi
+        </h1>
+        <div class="glass p-8 rounded-3xl max-w-2xl mx-auto">
+          <p class="text-lg text-gray-700 mb-6">
+            Consultation gratuite de 30 minutes pour analyser vos défis.
+          </p>
+          <a 
+            href="#contact" 
+            class="inline-flex items-center px-6 py-3 bg-gradient-bkc text-white font-semibold rounded-full hover:shadow-lg transition-all duration-300"
+          >
+            Réserver ma consultation
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+  <Footer />
+</Layout>
+EOF

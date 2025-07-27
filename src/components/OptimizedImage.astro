@@ -1,0 +1,41 @@
+---
+import { Image } from 'astro:assets';
+
+interface Props {
+  src: string;
+  alt: string;
+  width?: number;
+  height?: number;
+  class?: string;
+  loading?: 'lazy' | 'eager';
+  quality?: number;
+  format?: 'webp' | 'avif' | 'png' | 'jpg';
+}
+
+const {
+  src,
+  alt,
+  width = 400,
+  height = 500,
+  class: className = '',
+  loading = 'lazy',
+  quality = 80,
+  format = 'webp'
+} = Astro.props;
+
+// Import de l'image pour l'optimisation Astro
+const imageModule = await import(/* @vite-ignore */ src);
+const optimizedImage = imageModule.default;
+---
+
+<Image
+  src={optimizedImage}
+  alt={alt}
+  width={width}
+  height={height}
+  class={className}
+  loading={loading}
+  quality={quality}
+  format={format}
+  fallbackFormat="png"
+/>
