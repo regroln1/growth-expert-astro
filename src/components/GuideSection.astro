@@ -1,4 +1,6 @@
 ---
+import { Image } from 'astro:assets';
+import regisImage from '../assets/images/regis.png';
 ---
 
 <section id="about" class="py-20 lg:py-32 relative overflow-hidden">
@@ -14,8 +16,8 @@
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
       <!-- Photo section without any container -->
       <div class="animate-slide-left">
-        <img 
-          src="/images/regis.png" 
+        <Image 
+          src={regisImage} 
           alt="Régis ROLNIN, Expert en croissance PME et créateur de la Méthode AIA™"
           class="w-full h-auto object-contain transition-all duration-500"
           loading="lazy"

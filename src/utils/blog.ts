@@ -5,10 +5,11 @@ import type { BlogPost, TOCItem } from '../types';
  * ✅ Récupère tous les articles (hors brouillons) triés par date décroissante
  */
 export async function getAllPosts(): Promise<BlogPost[]> {
-  const posts = await getCollection('blog', ({ data }) => {
-    return import.meta.env.PROD ? !data.draft : true;
-  });
-  return posts.sort((a: BlogPost, b: BlogPost) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+  const posts = await getCollection('blog');
+  const publishedPosts = posts.filter((post: any) => !post.data.draft);
+  return publishedPosts.sort((a: BlogPost, b: BlogPost) => 
+    b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
+  );
 }
 
 /**
