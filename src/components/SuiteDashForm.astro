@@ -1,0 +1,32 @@
+---
+interface Props {
+  formUrl: string;
+  height?: string;
+  trustText?: string;
+}
+
+const { formUrl, height = '600px', trustText } = Astro.props;
+---
+
+<div class="suitedash-form-container w-full">
+  <iframe
+    src={formUrl}
+    width="100%"
+    height={height}
+    frameborder="0"
+    class="rounded-xl"
+    style="border: none;"
+  ></iframe>
+  {trustText && (
+    <p class="text-sm text-gray-500 text-center mt-4 font-crimson">
+      {trustText}
+    </p>
+  )}
+</div>
+
+<style>
+  /* Assure que les coins arrondis de l'iframe sont visibles */
+  .suitedash-form-container {
+    overflow: hidden;
+  }
+</style>
