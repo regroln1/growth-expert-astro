@@ -1,3 +1,7 @@
+---
+import SuiteDashForm from './SuiteDashForm.astro';
+---
+
 <footer class="bg-gradient-7 text-white px-6 py-12">
   <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-8">
 
@@ -89,12 +93,15 @@
       <p class="text-sm text-gray-300 mb-2">
         Des stratégies avancées, des outils testés, et des idées concrètes pour bâtir une entreprise solide et scalable.
       </p>
-      <form class="flex flex-col space-y-2">
-        <input type="email" placeholder="Votre email" class="px-3 py-2 rounded-md text-black" />
-        <button type="submit" class="bg-yellow-500 text-black px-4 py-2 rounded-md hover:bg-yellow-400 transition">
-          Je m'inscris
-        </button>
-      </form>
+      <div class="mt-4">
+        <SuiteDashForm
+          formUrl="https://your-suitedash-url.com/frm/newsletter"
+          height="200px"
+          trustText="🔒 Pas de spam, désinscription en un clic"
+          loadingText="Chargement..."
+          containerClass="bg-transparent p-0"
+        />
+      </div>
     </div>
   </div>
 
