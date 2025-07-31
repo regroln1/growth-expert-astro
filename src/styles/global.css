@@ -54,7 +54,7 @@
 }
 
 body {
-  background: hsl(var(--background));
+  background-color: var(--navy-black); /* Change this line */
   color: hsl(var(--foreground));
   font-family: 'Inter', sans-serif;
 }
