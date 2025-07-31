@@ -1,0 +1,161 @@
+---
+export interface Props {
+  formUrl: string;
+  height?: string;
+  trustText?: string;
+  loadingText?: string;
+  containerClass?: string;
+}
+
+const {
+  formUrl,
+  height = "600px",
+  trustText,
+  loadingText = "Chargement du formulaire…",
+  containerClass = "bg-white rounded-xl shadow-xl p-8"
+} = Astro.props;
+
+// Generate unique ID for this form instance
+const formId = `suitedash-form-${Math.random().toString(36).substr(2, 9)}`;
+const loadingId = `loading-${formId}`;
+---
+
+<div class={`suitedash-form-container ${containerClass}`}>
+  <!-- Loading Placeholder -->
+  <div 
+    id={loadingId}
+    class="flex flex-col items-center justify-center text-center py-16 transition-opacity duration-500"
+    style={`min-height: ${height}`}
+  >
+    <!-- Loading Spinner -->
+    <div class="relative mb-6">
+      <div class="w-16 h-16 border-4 border-blue-200 border-t-blue-600 rounded-full animate-spin"></div>
+      <div class="absolute inset-0 w-16 h-16 border-4 border-transparent border-r-purple-600 rounded-full animate-spin" style="animation-delay: 0.5s; animation-direction: reverse;"></div>
+    </div>
+    
+    <!-- Loading Text -->
+    <p class="text-lg font-crimson text-gray-500 mb-2">
+      {loadingText}
+    </p>
+    <p class="text-sm font-crimson text-gray-400">
+      Veuillez patienter quelques instants...
+    </p>
+  </div>
+
+  <!-- SuiteDash Form Iframe -->
+  <iframe
+    id={formId}
+    src={formUrl}
+    width="100%"
+    height={height}
+    frameborder="0"
+    scrolling="auto"
+    class="w-full border-none rounded-xl opacity-0 transition-opacity duration-700 ease-in-out"
+    title="Formulaire de contact"
+    loading="lazy"
+  ></iframe>
+
+  <!-- Trust Text -->
+  {trustText && (
+    <div class="mt-6 text-center">
+      <p class="text-sm font-crimson text-gray-500">
+        {trustText}
+      </p>
+    </div>
+  )}
+</div>
+
+<script define:vars={{ formId, loadingId }}>
+  document.addEventListener('DOMContentLoaded', function() {
+    const iframe = document.getElementById(formId);
+    const loading = document.getElementById(loadingId);
+    
+    if (!iframe || !loading) return;
+
+    // Function to handle iframe load
+    function handleIframeLoad() {
+      // Hide loading placeholder
+      loading.style.opacity = '0';
+      setTimeout(() => {
+        loading.style.display = 'none';
+      }, 500);
+      
+      // Show iframe with fade-in effect
+      iframe.style.opacity = '1';
+    }
+
+    // Listen for iframe load event
+    iframe.addEventListener('load', handleIframeLoad);
+    
+    // Fallback timeout in case load event doesn't fire
+    setTimeout(() => {
+      if (iframe.style.opacity === '0') {
+        handleIframeLoad();
+      }
+    }, 10000); // 10 second fallback
+
+    // Handle iframe errors
+    iframe.addEventListener('error', function() {
+      loading.innerHTML = `
+        <div class="text-center py-8">
+          <div class="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-4">
+            <svg class="w-8 h-8 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-2.5L13.732 4c-.77-.833-1.964-.833-2.732 0L4.082 16.5c-.77.833.192 2.5 1.732 2.5z"></path>
+            </svg>
+          </div>
+          <p class="text-lg font-crimson text-red-600 mb-2">
+            Erreur de chargement
+          </p>
+          <p class="text-sm font-crimson text-gray-500">
+            Le formulaire n'a pas pu être chargé. Veuillez réessayer plus tard.
+          </p>
+          <button 
+            onclick="window.location.reload()" 
+            class="mt-4 px-6 py-2 bg-gradient-to-r from-blue-500 to-blue-600 text-white font-semibold rounded-full hover:shadow-lg hover:-translate-y-1 transition-all duration-300"
+          >
+            Réessayer
+          </button>
+        </div>
+      `;
+    });
+  });
+</script>
+
+<style>
+  .suitedash-form-container {
+    position: relative;
+    overflow: hidden;
+  }
+
+  /* Enhanced loading animation */
+  @keyframes pulse-glow {
+    0%, 100% {
+      box-shadow: 0 0 20px rgba(59, 130, 246, 0.3);
+    }
+    50% {
+      box-shadow: 0 0 30px rgba(59, 130, 246, 0.5);
+    }
+  }
+
+  .suitedash-form-container .animate-spin {
+    animation: spin 2s linear infinite;
+  }
+
+  /* Responsive iframe adjustments */
+  @media (max-width: 768px) {
+    .suitedash-form-container iframe {
+      min-height: 500px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .suitedash-form-container iframe {
+      min-height: 450px;
+    }
+  }
+
+  /* Smooth transitions */
+  .suitedash-form-container * {
+    transition: all 0.3s ease;
+  }
+</style>
