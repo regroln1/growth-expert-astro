@@ -143,13 +143,13 @@ html {
   right: 0;
   bottom: 0;
   background-image:
-    radial-gradient(1px 1px at 45px 65px, rgba(255, 255, 255, 0.15), transparent),
-    radial-gradient(1px 1px at 120px 180px, rgba(255, 255, 255, 0.1), transparent),
-    radial-gradient(1px 1px at 200px 90px, rgba(255, 255, 255, 0.2), transparent),
+    radial-gradient(2px 2px at 45px 65px, rgba(255, 255, 255, 0.15), transparent),
+    radial-gradient(2px 2px at 120px 180px, rgba(255, 255, 255, 0.1), transparent),
+    radial-gradient(2px 2px at 200px 90px, rgba(255, 255, 255, 0.2), transparent),
     radial-gradient(1px 1px at 350px 220px, rgba(255, 255, 255, 0.12), transparent),
-    radial-gradient(1px 1px at 280px 40px, rgba(255, 255, 255, 0.18), transparent),
+    radial-gradient(2px 2px at 280px 40px, rgba(255, 255, 255, 0.18), transparent),
     radial-gradient(1px 1px at 80px 300px, rgba(255, 255, 255, 0.14), transparent),
-    radial-gradient(1px 1px at 400px 150px, rgba(255, 255, 255, 0.16), transparent),
+    radial-gradient(2px 2px at 400px 150px, rgba(255, 255, 255, 0.16), transparent),
     radial-gradient(1px 1px at 150px 250px, rgba(255, 255, 255, 0.11), transparent);
   background-repeat: repeat;
   background-size: 450px 350px; /* Larger background size for less obvious repetition */
@@ -166,12 +166,12 @@ html {
   right: 0;
   bottom: 0;
   background-image:
-    radial-gradient(2px 2px at 75px 45px, rgba(255, 255, 255, 0.4), transparent),
-    radial-gradient(1px 1px at 180px 120px, rgba(255, 255, 255, 0.35), transparent),
-    radial-gradient(2px 2px at 50px 200px, rgba(255, 255, 255, 0.3), transparent),
-    radial-gradient(1px 1px at 220px 80px, rgba(255, 255, 255, 0.45), transparent),
-    radial-gradient(2px 2px at 140px 180px, rgba(255, 255, 255, 0.25), transparent),
-    radial-gradient(1px 1px at 90px 100px, rgba(255, 255, 255, 0.38), transparent);
+    radial-gradient(3px 3px at 75px 45px, rgba(255, 255, 255, 0.4), transparent),
+    radial-gradient(2px 2px at 180px 120px, rgba(255, 255, 255, 0.35), transparent),
+    radial-gradient(3px 3px at 50px 200px, rgba(255, 255, 255, 0.3), transparent),
+    radial-gradient(2px 2px at 220px 80px, rgba(255, 255, 255, 0.45), transparent),
+    radial-gradient(3px 3px at 140px 180px, rgba(255, 255, 255, 0.25), transparent),
+    radial-gradient(2px 2px at 90px 100px, rgba(255, 255, 255, 0.38), transparent);
   background-repeat: repeat;
   background-size: 300px 220px; /* Smaller background size for closer stars */
   animation: particles-close 35s linear infinite; /* Faster animation for closer stars */
