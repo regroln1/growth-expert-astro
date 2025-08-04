@@ -9,7 +9,7 @@ const navItems = isHomePage
       { name: 'À Propos', href: '#about', hasPage: true, pagePath: '/a-propos' },
       { name: 'Ressources', href: '#resources', hasPage: true, pagePath: '/ressources' },
       { name: 'Blog', href: '#blog', hasPage: true, pagePath: '/blog' },
-      { name: 'Travailler avec moi', href: '#contact', hasPage: true, pagePath: '/travailler-avec-moi' }
+      { name: 'Travailler avec moi', href: '/travailler-avec-moi', hasPage: true, pagePath: '/travailler-avec-moi' }
     ]
   : [
       { name: 'Accueil', href: '/' },
@@ -39,7 +39,7 @@ const navItems = isHomePage
                 ? 'text-navy-900 font-semibold' 
                 : 'text-navy-700 hover:text-navy-900'
             }`}
-            data-nav-type={isHomePage ? 'scroll' : 'page'}
+            data-nav-type={isHomePage && item.href.startsWith('#') ? 'scroll' : 'page'}
           >
             {item.name}
             <span class={`absolute bottom-0 left-0 h-0.5 bg-gradient-bkc transition-all duration-300 ${
@@ -87,7 +87,7 @@ const navItems = isHomePage
                 ? 'text-navy-900 font-semibold bg-navy-50' 
                 : 'text-navy-700 hover:text-navy-900 hover:bg-navy-50'
             }`}
-            data-nav-type={isHomePage ? 'scroll' : 'page'}
+            data-nav-type={isHomePage && item.href.startsWith('#') ? 'scroll' : 'page'}
           >
             {item.name}
           </a>
