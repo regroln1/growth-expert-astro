@@ -91,7 +91,7 @@ const resources = [
 
             <a href="/ressources" 
                class="block w-full py-4 px-6 cta-secondary-dark text-white font-semibold rounded-full hover-lift transition-all duration-300 text-center"
-               onclick="window.trackConversion && window.trackConversion.leadMagnetDownloaded('Free Resources')">
+               onclick="if (typeof window !== 'undefined' && window.trackConversion) { window.trackConversion.leadMagnetDownloaded('Free Resources'); }">
               Télécharger gratuitement
             </a>
           </div>

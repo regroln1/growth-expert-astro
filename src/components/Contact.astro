@@ -175,7 +175,7 @@ const benefits = [
       <a
         href="/travailler-avec-moi"
         class="inline-flex items-center px-12 py-6 cta-primary text-white font-semibold rounded-full hover-lift transition-all duration-300 text-xl"
-        onclick="window.trackConversion && window.trackConversion.bookDiscoveryCall()"
+        onclick="if (typeof window !== 'undefined' && window.trackConversion) { window.trackConversion.bookDiscoveryCall(); }"
       >
         Travailler avec moi
         <svg class="ml-4 w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">

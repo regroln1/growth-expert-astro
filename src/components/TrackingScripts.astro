@@ -10,11 +10,35 @@
   data-silktide-category="analytics"
 ></script>
 
-<!-- Conversion Event Tracking Functions -->
+<!-- Global type declarations -->
 <script>
+  // Declare global types for TypeScript
+  declare global {
+    interface Window {
+      umami?: {
+        track: (eventName: string, eventData?: Record<string, any>) => void;
+      };
+      trackConversion?: {
+        contactFormSubmitted: () => void;
+        bookDiscoveryCall: () => void;
+        leadMagnetDownloaded: (resourceName: string) => void;
+        suitedashCalendarClicked: () => void;
+        emailLinkClicked: () => void;
+        newsletterSignupClicked: () => void;
+        blogPostRead: (postTitle: string) => void;
+        methodPageViewed: () => void;
+        resourcePageViewed: () => void;
+        aboutPageViewed: () => void;
+      };
+      silktideCookieBannerManager?: {
+        updateCookieBannerConfig: (config: any) => void;
+      };
+    }
+  }
+
   // Wait for Umami to be available
-  function waitForUmami(callback) {
-    if (typeof umami !== 'undefined') {
+  function waitForUmami(callback: () => void): void {
+    if (typeof window !== 'undefined' && window.umami) {
       callback();
     } else {
       setTimeout(() => waitForUmami(callback), 100);
@@ -25,72 +49,92 @@
   window.trackConversion = {
     contactFormSubmitted: function() {
       waitForUmami(() => {
-        umami.track('Contact Form Submitted');
-        console.log('Tracked: Contact Form Submitted');
+        if (window.umami) {
+          window.umami.track('Contact Form Submitted');
+          console.log('Tracked: Contact Form Submitted');
+        }
       });
     },
     
     bookDiscoveryCall: function() {
       waitForUmami(() => {
-        umami.track('Book Discovery Call');
-        console.log('Tracked: Book Discovery Call');
+        if (window.umami) {
+          window.umami.track('Book Discovery Call');
+          console.log('Tracked: Book Discovery Call');
+        }
       });
     },
     
-    leadMagnetDownloaded: function(resourceName) {
+    leadMagnetDownloaded: function(resourceName: string) {
       waitForUmami(() => {
-        umami.track('Lead Magnet Downloaded', { resource: resourceName });
-        console.log('Tracked: Lead Magnet Downloaded -', resourceName);
+        if (window.umami) {
+          window.umami.track('Lead Magnet Downloaded', { resource: resourceName });
+          console.log('Tracked: Lead Magnet Downloaded -', resourceName);
+        }
       });
     },
     
     suitedashCalendarClicked: function() {
       waitForUmami(() => {
-        umami.track('Suitedash Calendar Clicked');
-        console.log('Tracked: Suitedash Calendar Clicked');
+        if (window.umami) {
+          window.umami.track('Suitedash Calendar Clicked');
+          console.log('Tracked: Suitedash Calendar Clicked');
+        }
       });
     },
     
     emailLinkClicked: function() {
       waitForUmami(() => {
-        umami.track('Email Link Clicked');
-        console.log('Tracked: Email Link Clicked');
+        if (window.umami) {
+          window.umami.track('Email Link Clicked');
+          console.log('Tracked: Email Link Clicked');
+        }
       });
     },
     
     newsletterSignupClicked: function() {
       waitForUmami(() => {
-        umami.track('Newsletter Signup Clicked');
-        console.log('Tracked: Newsletter Signup Clicked');
+        if (window.umami) {
+          window.umami.track('Newsletter Signup Clicked');
+          console.log('Tracked: Newsletter Signup Clicked');
+        }
       });
     },
 
     // Additional suggested events
-    blogPostRead: function(postTitle) {
+    blogPostRead: function(postTitle: string) {
       waitForUmami(() => {
-        umami.track('Blog Post Read', { title: postTitle });
-        console.log('Tracked: Blog Post Read -', postTitle);
+        if (window.umami) {
+          window.umami.track('Blog Post Read', { title: postTitle });
+          console.log('Tracked: Blog Post Read -', postTitle);
+        }
       });
     },
 
     methodPageViewed: function() {
       waitForUmami(() => {
-        umami.track('Method AIA Page Viewed');
-        console.log('Tracked: Method AIA Page Viewed');
+        if (window.umami) {
+          window.umami.track('Method AIA Page Viewed');
+          console.log('Tracked: Method AIA Page Viewed');
+        }
       });
     },
 
     resourcePageViewed: function() {
       waitForUmami(() => {
-        umami.track('Resources Page Viewed');
-        console.log('Tracked: Resources Page Viewed');
+        if (window.umami) {
+          window.umami.track('Resources Page Viewed');
+          console.log('Tracked: Resources Page Viewed');
+        }
       });
     },
 
     aboutPageViewed: function() {
       waitForUmami(() => {
-        umami.track('About Page Viewed');
-        console.log('Tracked: About Page Viewed');
+        if (window.umami) {
+          window.umami.track('About Page Viewed');
+          console.log('Tracked: About Page Viewed');
+        }
       });
     }
   };
@@ -100,21 +144,25 @@
     const path = window.location.pathname;
     
     if (path === '/methode-aia') {
-      window.trackConversion.methodPageViewed();
+      window.trackConversion?.methodPageViewed();
     } else if (path === '/ressources') {
-      window.trackConversion.resourcePageViewed();
+      window.trackConversion?.resourcePageViewed();
     } else if (path === '/a-propos') {
-      window.trackConversion.aboutPageViewed();
+      window.trackConversion?.aboutPageViewed();
     } else if (path.startsWith('/blog/') && path !== '/blog') {
       const postTitle = document.querySelector('h1')?.textContent || 'Unknown Post';
-      window.trackConversion.blogPostRead(postTitle);
+      window.trackConversion?.blogPostRead(postTitle);
     }
   });
 
   // Auto-track email links
-  document.addEventListener('click', function(e) {
-    if (e.target.tagName === 'A' && e.target.href.startsWith('mailto:')) {
-      window.trackConversion.emailLinkClicked();
+  document.addEventListener('click', function(e: Event) {
+    const target = e.target as HTMLElement;
+    if (target.tagName === 'A') {
+      const link = target as HTMLAnchorElement;
+      if (link.href.startsWith('mailto:')) {
+        window.trackConversion?.emailLinkClicked();
+      }
     }
   });
 </script>

@@ -31,9 +31,10 @@ const socialImage = new URL(image, Astro.site);
     
     <!-- Silktide Consent Manager -->
     <link rel="stylesheet" id="silktide-consent-manager-css" href="/cookie-banner/silktide-consent-manager.css">
-    <script src="/cookie-banner/silktide-consent-manager.js"></script>
-    <script>
-    silktideCookieBannerManager.updateCookieBannerConfig({
+    <script src="/cookie-banner/silktide-consent-manager.js" is:inline></script>
+    <script is:inline>
+    if (typeof window !== 'undefined' && window.silktideCookieBannerManager) {
+      window.silktideCookieBannerManager.updateCookieBannerConfig({
       background: {
         showBackground: true
       },
@@ -90,7 +91,8 @@ const socialImage = new URL(image, Astro.site);
       position: {
         banner: "bottomLeft"
       }
-    });
+      });
+    }
     </script>
     
     <link rel="canonical" href={canonicalURL} />

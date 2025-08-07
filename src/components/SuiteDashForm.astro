@@ -90,7 +90,7 @@ const loadingId = `loading-${formId}`;
     // Track form interaction
     iframe.addEventListener('load', function() {
       // Track that the form was loaded/viewed
-      if (window.trackConversion) {
+      if (typeof window !== 'undefined' && window.trackConversion) {
         if (formId.includes('contact') || formId.includes('travailler')) {
           window.trackConversion.suitedashCalendarClicked();
         }
