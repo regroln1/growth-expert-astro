@@ -170,6 +170,7 @@ const resources = [
                     resource.color === 'blue' ? 'bg-gradient-to-r from-blue-500 to-blue-600' :
                     'bg-gradient-to-r from-purple-500 to-purple-600'
                   }`}
+                  onclick="window.trackConversion && window.trackConversion.leadMagnetDownloaded('{resource.title}')"
                 >
                   {resource.cta}
                 </a>

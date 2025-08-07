@@ -87,6 +87,16 @@ const loadingId = `loading-${formId}`;
     // Listen for iframe load event
     iframe.addEventListener('load', handleIframeLoad);
     
+    // Track form interaction
+    iframe.addEventListener('load', function() {
+      // Track that the form was loaded/viewed
+      if (window.trackConversion) {
+        if (formId.includes('contact') || formId.includes('travailler')) {
+          window.trackConversion.suitedashCalendarClicked();
+        }
+      }
+    });
+    
     // Fallback timeout in case load event doesn't fire
     setTimeout(() => {
       if (iframe.style.opacity === '0') {

@@ -1,0 +1,120 @@
+---
+// TrackingScripts.astro - Centralized tracking scripts with consent management
+---
+
+<!-- Umami Analytics - Only loads with consent -->
+<script 
+  defer 
+  src="https://cloud.umami.is/script.js" 
+  data-website-id="e1e5657a-1d06-4b35-8597-7e1092b92e5b"
+  data-silktide-category="analytics"
+></script>
+
+<!-- Conversion Event Tracking Functions -->
+<script>
+  // Wait for Umami to be available
+  function waitForUmami(callback) {
+    if (typeof umami !== 'undefined') {
+      callback();
+    } else {
+      setTimeout(() => waitForUmami(callback), 100);
+    }
+  }
+
+  // Conversion event tracking functions
+  window.trackConversion = {
+    contactFormSubmitted: function() {
+      waitForUmami(() => {
+        umami.track('Contact Form Submitted');
+        console.log('Tracked: Contact Form Submitted');
+      });
+    },
+    
+    bookDiscoveryCall: function() {
+      waitForUmami(() => {
+        umami.track('Book Discovery Call');
+        console.log('Tracked: Book Discovery Call');
+      });
+    },
+    
+    leadMagnetDownloaded: function(resourceName) {
+      waitForUmami(() => {
+        umami.track('Lead Magnet Downloaded', { resource: resourceName });
+        console.log('Tracked: Lead Magnet Downloaded -', resourceName);
+      });
+    },
+    
+    suitedashCalendarClicked: function() {
+      waitForUmami(() => {
+        umami.track('Suitedash Calendar Clicked');
+        console.log('Tracked: Suitedash Calendar Clicked');
+      });
+    },
+    
+    emailLinkClicked: function() {
+      waitForUmami(() => {
+        umami.track('Email Link Clicked');
+        console.log('Tracked: Email Link Clicked');
+      });
+    },
+    
+    newsletterSignupClicked: function() {
+      waitForUmami(() => {
+        umami.track('Newsletter Signup Clicked');
+        console.log('Tracked: Newsletter Signup Clicked');
+      });
+    },
+
+    // Additional suggested events
+    blogPostRead: function(postTitle) {
+      waitForUmami(() => {
+        umami.track('Blog Post Read', { title: postTitle });
+        console.log('Tracked: Blog Post Read -', postTitle);
+      });
+    },
+
+    methodPageViewed: function() {
+      waitForUmami(() => {
+        umami.track('Method AIA Page Viewed');
+        console.log('Tracked: Method AIA Page Viewed');
+      });
+    },
+
+    resourcePageViewed: function() {
+      waitForUmami(() => {
+        umami.track('Resources Page Viewed');
+        console.log('Tracked: Resources Page Viewed');
+      });
+    },
+
+    aboutPageViewed: function() {
+      waitForUmami(() => {
+        umami.track('About Page Viewed');
+        console.log('Tracked: About Page Viewed');
+      });
+    }
+  };
+
+  // Auto-track page views for key pages
+  document.addEventListener('DOMContentLoaded', function() {
+    const path = window.location.pathname;
+    
+    if (path === '/methode-aia') {
+      window.trackConversion.methodPageViewed();
+    } else if (path === '/ressources') {
+      window.trackConversion.resourcePageViewed();
+    } else if (path === '/a-propos') {
+      window.trackConversion.aboutPageViewed();
+    } else if (path.startsWith('/blog/') && path !== '/blog') {
+      const postTitle = document.querySelector('h1')?.textContent || 'Unknown Post';
+      window.trackConversion.blogPostRead(postTitle);
+    }
+  });
+
+  // Auto-track email links
+  document.addEventListener('click', function(e) {
+    if (e.target.tagName === 'A' && e.target.href.startsWith('mailto:')) {
+      window.trackConversion.emailLinkClicked();
+    }
+  });
+</script>

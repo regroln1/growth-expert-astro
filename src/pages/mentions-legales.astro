@@ -1,0 +1,73 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<Layout 
+  title="Mentions Légales - Régis Rolnin | Growth Expert"
+  description="Mentions légales du site regisrolnin.com - Informations légales et réglementaires."
+  noindex={true}
+>
+  <Header />
+  
+  <main class="pt-20 min-h-screen bg-white">
+    <div class="container mx-auto px-6 py-16">
+      <div class="max-w-4xl mx-auto">
+        <h1 class="text-4xl font-bold text-navy-900 mb-8 font-crimson">Mentions Légales</h1>
+        
+        <div class="prose prose-lg max-w-none">
+          <section class="mb-8">
+            <h2 class="text-2xl font-bold text-navy-900 mb-4">Éditeur du site</h2>
+            <p><strong>Nom :</strong> Régis ROLNIN</p>
+            <p><strong>Statut :</strong> Entrepreneur individuel</p>
+            <p><strong>Adresse :</strong> Bastia, France</p>
+            <p><strong>Email :</strong> <a href="mailto:contact@regisrolnin.com">contact@regisrolnin.com</a></p>
+            <p><strong>Site web :</strong> <a href="https://regisrolnin.com">https://regisrolnin.com</a></p>
+          </section>
+
+          <section class="mb-8">
+            <h2 class="text-2xl font-bold text-navy-900 mb-4">Hébergement</h2>
+            <p><strong>Hébergeur :</strong> Netlify, Inc.</p>
+            <p><strong>Adresse :</strong> 2325 3rd Street, Suite 296, San Francisco, CA 94107, États-Unis</p>
+            <p><strong>Site web :</strong> <a href="https://www.netlify.com" target="_blank" rel="noopener">https://www.netlify.com</a></p>
+          </section>
+
+          <section class="mb-8">
+            <h2 class="text-2xl font-bold text-navy-900 mb-4">Propriété intellectuelle</h2>
+            <p>L'ensemble de ce site relève de la législation française et internationale sur le droit d'auteur et la propriété intellectuelle. Tous les droits de reproduction sont réservés, y compris pour les documents téléchargeables et les représentations iconographiques et photographiques.</p>
+            <p>La reproduction de tout ou partie de ce site sur un support électronique quel qu'il soit est formellement interdite sauf autorisation expresse du directeur de la publication.</p>
+          </section>
+
+          <section class="mb-8">
+            <h2 class="text-2xl font-bold text-navy-900 mb-4">Responsabilité</h2>
+            <p>Les informations contenues sur ce site sont aussi précises que possible et le site remis à jour à différentes périodes de l'année, mais peut toutefois contenir des inexactitudes ou des omissions.</p>
+            <p>Si vous constatez une lacune, erreur ou ce qui parait être un dysfonctionnement, merci de bien vouloir le signaler par email, à l'adresse <a href="mailto:contact@regisrolnin.com">contact@regisrolnin.com</a>, en décrivant le problème de la manière la plus précise possible.</p>
+          </section>
+
+          <section class="mb-8">
+            <h2 class="text-2xl font-bold text-navy-900 mb-4">Liens hypertextes</h2>
+            <p>Les sites internet peuvent proposer des liens vers d'autres sites internet ou d'autres ressources disponibles sur Internet. Régis ROLNIN ne dispose d'aucun moyen pour contrôler les sites en connexion avec ses sites internet.</p>
+            <p>Régis ROLNIN ne répond pas de la disponibilité de tels sites et sources externes, ni ne la garantit. Il ne peut être tenu pour responsable de tout dommage, de quelque nature que ce soit, résultant du contenu de ces sites ou sources externes.</p>
+          </section>
+
+          <section class="mb-8">
+            <h2 class="text-2xl font-bold text-navy-900 mb-4">Droit applicable</h2>
+            <p>Tant le présent site que les modalités et conditions de son utilisation sont régis par le droit français, quel que soit le lieu d'utilisation. En cas de contestation éventuelle, et après l'échec de toute tentative de recherche d'une solution amiable, les tribunaux français seront seuls compétents pour connaître de ce litige.</p>
+          </section>
+
+          <section class="mb-8">
+            <h2 class="text-2xl font-bold text-navy-900 mb-4">Collecte des données</h2>
+            <p>Pour les informations concernant la collecte et le traitement de vos données personnelles, veuillez consulter notre <a href="/politique-confidentialite">Politique de confidentialité</a>.</p>
+          </section>
+
+          <p class="text-sm text-gray-600 mt-8">
+            <em>Dernière mise à jour : {new Date().toLocaleDateString('fr-FR')}</em>
+          </p>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <Footer />
+</Layout>
