@@ -1,0 +1,211 @@
+---
+import Layout from '../../layouts/Layout.astro';
+---
+
+<Layout 
+  title="Votre Checklist est Prête à Télécharger | Growth Expert"
+  description="Merci d'avoir téléchargé notre checklist d'alignement d'offre. Regardez le guide vidéo et accédez immédiatement à votre PDF."
+  noindex={true}
+>
+  <main class="min-h-screen bg-gradient-to-br from-blue-50 via-white to-purple-50 py-12 px-6">
+    <!-- Floating background elements -->
+    <div class="absolute top-20 left-10 w-64 h-64 bg-blue-500/5 rounded-full blur-3xl float-slow"></div>
+    <div class="absolute bottom-20 right-10 w-80 h-80 bg-purple-500/5 rounded-full blur-3xl float-medium"></div>
+    <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-48 h-48 bg-amber-500/5 rounded-full blur-2xl float-fast"></div>
+
+    <div class="relative z-10 max-w-6xl mx-auto">
+      <!-- Main Header -->
+      <div class="text-center mb-16">
+        <div class="inline-flex items-center px-4 py-2 bg-green-100 border border-green-200/50 rounded-full mb-6">
+          <svg class="w-5 h-5 mr-2 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+          </svg>
+          <span class="text-md font-semibold text-green-700">Checklist Prête !</span>
+        </div>
+        <h1 class="text-4xl lg:text-5xl font-bold text-navy-900 mb-4 font-crimson max-w-3xl mx-auto">
+          Merci ! Votre checklist d'alignement est <span class="text-gradient-gold">prête à télécharger</span>
+        </h1>
+        <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+          Regardez cette vidéo de 3 minutes pour maximiser son impact, puis téléchargez immédiatement votre PDF
+        </p>
+      </div>
+
+      <!-- Video Section - Full Width -->
+      <div class="mb-16">
+        <div class="aspect-w-16 aspect-h-9 bg-gray-200 rounded-2xl overflow-hidden shadow-2xl mb-10">
+          <iframe 
+            src="https://www.youtube.com/embed/VIDEO_ID" 
+            class="w-full h-full"
+            title="Guide d'utilisation de la checklist"
+            frameborder="0" 
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+            allowfullscreen>
+          </iframe>
+        </div>
+        
+        <!-- Video Benefits Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+          <div class="bg-white p-5 rounded-xl border border-gray-200 shadow-sm">
+            <div class="text-amber-600 font-bold text-lg mb-2">✓ Étape par étape</div>
+            <p>Comment utiliser chaque jour de votre checklist efficacement</p>
+          </div>
+          <div class="bg-white p-5 rounded-xl border border-gray-200 shadow-sm">
+            <div class="text-amber-600 font-bold text-lg mb-2">⚠️ Erreur #1</div>
+            <p>À éviter absolument lors de l'analyse concurrentielle</p>
+          </div>
+          <div class="bg-white p-5 rounded-xl border border-gray-200 shadow-sm">
+            <div class="text-amber-600 font-bold text-lg mb-2">🎯 USP performants</div>
+            <p>Des exemples concrets qui convertissent</p>
+          </div>
+          <div class="bg-white p-5 rounded-xl border border-gray-200 shadow-sm">
+            <div class="text-amber-600 font-bold text-lg mb-2">⚡ Validation rapide</div>
+            <p>Comment tester votre message en 48h maximum</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Download Section -->
+      <div class="bg-gradient-to-r from-amber-50 to-yellow-50 rounded-3xl p-8 mb-16 border border-amber-100 shadow-lg">
+        <div class="max-w-4xl mx-auto">
+          <div class="text-center mb-10">
+            <h2 class="text-3xl font-bold text-navy-900 mb-4">
+              <span class="text-gradient-gold">Téléchargez immédiatement</span> votre checklist
+            </h2>
+            <p class="text-xl text-gray-700">
+              Accédez à votre guide pratique dès maintenant, sans attendre l'email
+            </p>
+          </div>
+
+          <div class="bg-white rounded-2xl p-6 shadow-md flex flex-col md:flex-row items-center justify-between gap-8">
+            <div class="flex items-center">
+              <div class="bg-amber-100 p-4 rounded-xl mr-6">
+                <svg class="w-10 h-10 text-amber-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 01-2-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+                </svg>
+              </div>
+              <div>
+                <div class="font-bold text-xl text-navy-900">Checklist_Alignement_Offre.pdf</div>
+                <div class="flex items-center text-gray-600 mt-2">
+                  <svg class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M3 17a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm3.293-7.707a1 1 0 011.414 0L9 10.586V3a1 1 0 112 0v7.586l1.293-1.293a1 1 0 111.414 1.414l-3 3a1 1 0 01-1.414 0l-3-3a1 1 0 010-1.414z" clip-rule="evenodd"/>
+                  </svg>
+                  <span>1.2 MB • PDF</span>
+                </div>
+              </div>
+            </div>
+            <a 
+              href="https://acces.regisrolnin.com/file/27de309d0dbf9838750183573972189e/d9ab5327-28e6-46f1-b1df-732ea78fafa5/Triptyque.pdf" 
+              download
+              class="px-8 py-4 bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-600 hover:to-amber-700 text-white font-bold rounded-full text-lg shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 flex items-center"
+            >
+              Télécharger maintenant
+              <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path>
+              </svg>
+            </a>
+          </div>
+
+          <div class="text-center mt-8 text-gray-600">
+            <p>📬 <span class="font-semibold">Vous recevrez également une copie par email</span> avec des conseils supplémentaires</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Next Steps & Social Proof -->
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+        <!-- Next Steps -->
+        <div>
+          <h3 class="text-2xl font-bold text-navy-900 mb-6 pb-2 border-b border-gray-200">
+            <svg class="w-6 h-6 inline mr-2 text-amber-600" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+            </svg>
+            Votre plan d'action en 3 étapes :
+          </h3>
+          <ol class="space-y-6">
+            <li class="flex items-start">
+              <div class="bg-amber-100 text-amber-800 font-bold rounded-full w-8 h-8 flex items-center justify-center mr-4 flex-shrink-0 text-lg">1</div>
+              <div>
+                <h4 class="font-bold text-lg text-gray-900">Regardez la vidéo guide</h4>
+                <p class="text-gray-700 mt-1">Prenez 3 minutes pour découvrir comment maximiser l'impact de chaque étape</p>
+              </div>
+            </li>
+            <li class="flex items-start">
+              <div class="bg-amber-100 text-amber-800 font-bold rounded-full w-8 h-8 flex items-center justify-center mr-4 flex-shrink-0 text-lg">2</div>
+              <div>
+                <h4 class="font-bold text-lg text-gray-900">Téléchargez la checklist</h4>
+                <p class="text-gray-700 mt-1">Accédez immédiatement au PDF grâce au bouton ci-dessus</p>
+              </div>
+            </li>
+            <li class="flex items-start">
+              <div class="bg-amber-100 text-amber-800 font-bold rounded-full w-8 h-8 flex items-center justify-center mr-4 flex-shrink-0 text-lg">3</div>
+              <div>
+                <h4 class="font-bold text-lg text-gray-900">Bloquez 15 minutes demain</h4>
+                <p class="text-gray-700 mt-1">Pour commencer le Jour 1 : Analyse concurrentielle</p>
+              </div>
+            </li>
+          </ol>
+        </div>
+
+        <!-- Social Proof -->
+        <div>
+          <h3 class="text-2xl font-bold text-navy-900 mb-6 pb-2 border-b border-gray-200">
+            <svg class="w-6 h-6 inline mr-2 text-purple-600" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M18 13V5a2 2 0 00-2-2H4a2 2 0 00-2 2v8a2 2 0 002 2h3l3 3 3-3h3a2 2 0 002-2z"/>
+            </svg>
+            Ce que disent nos utilisateurs :
+          </h3>
+          <div class="space-y-6">
+            <div class="bg-white p-6 rounded-xl border border-gray-200 shadow-sm">
+              <div class="text-amber-500 mb-3">
+                ★★★★★
+              </div>
+              <p class="text-gray-700 italic mb-4">
+                "Cette checklist m'a fait gagner 3 mois de tâtonnements. En 7 jours j'avais une offre claire et mon premier client premium !"
+              </p>
+              <div class="flex items-center">
+                <div class="bg-gray-200 border-2 border-dashed rounded-xl w-12 h-12" />
+                <div class="ml-3">
+                  <div class="font-semibold text-gray-900">Marie Dubois</div>
+                  <div class="text-gray-600">Consultante Marketing</div>
+                </div>
+              </div>
+            </div>
+            <div class="bg-gradient-to-r from-blue-50 to-purple-50 p-6 rounded-xl border border-white shadow-sm">
+              <p class="text-gray-700">
+                <span class="font-bold text-lg inline-block mr-2">⚡ 92%</span> des utilisateurs qui complètent le Jour 1 dans les 48h terminent l'ensemble de la checklist
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+</Layout>
+
+<style>
+  .float-slow { animation: float-slow 8s ease-in-out infinite; }
+  .float-medium { animation: float-medium 6s ease-in-out infinite; }
+  .float-fast { animation: float-fast 4s ease-in-out infinite; }
+  
+  @keyframes float-slow {
+    0%, 100% { transform: translateY(0px) rotate(0deg); }
+    50% { transform: translateY(-20px) rotate(2deg); }
+  }
+  
+  @keyframes float-medium {
+    0%, 100% { transform: translateY(0px) rotate(0deg); }
+    50% { transform: translateY(-15px) rotate(-1deg); }
+  }
+  
+  @keyframes float-fast {
+    0%, 100% { transform: translateY(0px) rotate(0deg); }
+    50% { transform: translateY(-10px) rotate(1deg); }
+  }
+  
+  .text-gradient-gold {
+    background: linear-gradient(135deg, #f59e0b 0%, #d97706 50%, #f59e0b 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+</style>
